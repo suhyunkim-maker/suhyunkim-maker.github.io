@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My GitHub Pages Blog</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <h1><a href="index.html">My Blog</a></h1>
+      <nav>
+        <button id="theme-toggle">🌓</button>
+      </nav>
+    </div>
+  </header>
+  
+  <main>
+    <div class="search-container">
+      <input type="text" id="search-input" placeholder="검색어를 입력하세요...">
+    </div>
+    
+    <div class="tag-filter-container">
+      <ul id="tag-filters"></ul>
+    </div>
+
+    <section id="post-list" class="post-list">
+      <!-- 게시글 목록이 여기에 동적으로 렌더링됩니다 -->
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 My Blog. Powered by GitHub Pages.</p>
+  </footer>
+
+  <script src="js/theme.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
