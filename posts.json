@@ -1,5 +1,18 @@
 [
   {
+    "file": "instagram-analysis.md",
+    "title": "인스타그램 인플루언서 데이터 분석",
+    "date": "2025-05-08",
+    "tags": [
+      "Pandas",
+      "Google Colab",
+      "Data Analysis"
+    ],
+    "category": "Projects",
+    "description": "메인 인스타그램 인플루언서에 대한 데이터 분석 및 추천 방법",
+    "excerpt": "메인 인스타그램 인플루언서에 대한 데이터 분석 프로젝트입니다. - : Pandas - : Google Colab - 데이터 기반 인플루언서 추천 - 구글 코랩을 활용한 데이터 분석 코딩"
+  },
+  {
     "file": "example.md",
     "title": "첫 번째 게시글",
     "date": "2025-01-26",
