@@ -1,5 +1,18 @@
 [
   {
+    "file": "data-preprocessing.md",
+    "title": "인스타그램 인플루언서 데이터 전처리 과정",
+    "date": "2026-05-11",
+    "tags": [
+      "Python",
+      "Pandas",
+      "Data Cleaning"
+    ],
+    "category": "Data Science",
+    "description": "인플루언서 분석을 위한 데이터 정제 및 변환 과정 상세 정리",
+    "excerpt": "분석의 첫걸음인 데이터 전처리! k, m 단위를 숫자로 바꾸고 결측치를 처리하는 과정을 정리했습니다."
+  },
+  {
     "file": "instagram-analysis.md",
     "title": "인스타그램 인플루언서 데이터 분석",
     "date": "2025-05-08",
