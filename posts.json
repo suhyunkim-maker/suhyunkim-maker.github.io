@@ -27,17 +27,31 @@
     "excerpt": "데이터 전처리 과정을 마친 후, 이제 본격적으로 인스타그램 인플루언서 데이터를 탐색하고 시각화하기 위한 준비를 마쳤습니다. 이번 포스팅에서는 정제된 데이터를 바탕으로 상위 인플루언서들의 주요 지표를 살펴보고 통찰을 공유합니다."
   },
   {
-    "file": "data-preprocessing.md",
-    "title": "인스타그램 인플루언서 분석: 데이터 전처리",
+    "file": "ohtani-analysis.md",
+    "title": "세이버매트릭스로 예측하는 오타니 선수의 올해 성적은?",
     "date": "2026-05-11",
     "tags": [
-      "Pandas",
-      "Data Preprocessing",
-      "Python"
+      "Sabermetrics",
+      "Python",
+      "Machine Learning",
+      "Ohtani"
     ],
-    "category": "Projects",
-    "description": "인스타그램 인플루언서 데이터 분석을 위한 데이터 정제 및 전처리 과정 정리",
-    "excerpt": "인스타그램 인플루언서의 데이터를 본격적으로 분석하고 시각화하기에 앞서, 데이터가 분석하기 적합한 형태인지 확인하고 가공하는  과정을 거쳤습니다.  이번 포스팅에서는 `Pandas`를 활용하여 원본 데이터를 어떻게 정제했는지 공유합니다. 데이터를 살펴보니 `country` (국가) 컬럼에 일부 결측치가 존재했습니다. 데이터 분석 및 Tableau 시각화 시"
+    "category": "Data Science",
+    "description": "데이터 분석 단계별로 따라하며 예측해보는 오타니의 2026년 성적",
+    "excerpt": "오타니 쇼헤이의 2026년 OPS는? 세이버매트릭스와 선형 회귀 모델을 통해 분석해보았습니다."
+  },
+  {
+    "file": "data-preprocessing.md",
+    "title": "인스타그램 인플루언서 데이터 전처리 과정",
+    "date": "2026-05-11",
+    "tags": [
+      "Python",
+      "Pandas",
+      "Data Cleaning"
+    ],
+    "category": "Data Science",
+    "description": "인플루언서 분석을 위한 데이터 정제 및 변환 과정 상세 정리",
+    "excerpt": "분석의 첫걸음인 데이터 전처리! k, m 단위를 숫자로 바꾸고 결측치를 처리하는 과정을 정리했습니다."
   },
   {
     "file": "instagram-analysis.md",
