@@ -1,5 +1,33 @@
 [
   {
+    "file": "bunjang-crawling-playwright.md",
+    "title": "Playwright MCP 연동으로 번개장터 물티슈 데이터 크롤링하기",
+    "date": "2026-05-14",
+    "tags": [
+      "Playwright",
+      "MCP",
+      "Crawling",
+      "AI Agent"
+    ],
+    "category": "Projects",
+    "description": "Playwright MCP를 활용해 번개장터의 물티슈 상품 데이터를 브라우저 자동화로 손쉽게 수집하는 방법",
+    "excerpt": "AI 에이전트와 Playwright MCP를 결합하여 동적 스크롤이 적용된 웹페이지에서 상품 데이터를 추출하는 과정을 다룹니다."
+  },
+  {
+    "file": "saramin-market-analysis-2026.md",
+    "title": "2026 데이터 분석가 채용 시장 트렌드: 사람인 120개 공고 분석",
+    "date": "2026-05-14",
+    "tags": [
+      "Market Analysis",
+      "Crawling",
+      "Data Science",
+      "Saramin"
+    ],
+    "category": "Projects",
+    "description": "2026년 상반기 사람인 채용 데이터를 크롤링하여 분석한 최신 데이터 분석 직군 트렌드",
+    "excerpt": "최근 수집한 120여 건의 채용 공고를 바탕으로, 데이터 분석가에게 요구되는 실무 경력과 핵심 기술 스택 트렌드를 정리해 보았습니다."
+  },
+  {
     "file": "saramin-crawling-analysis.md",
     "title": "실전 크롤링: 사람인 채용 공고 데이터 분석 및 기술 스택 추출",
     "date": "2026-05-13",
