@@ -6,6 +6,8 @@ category: 'Projects'
 description: 'odcloud.kr 공공데이터 API를 활용해 여러 페이지의 데이터를 한 번에 가져오고 Pandas로 가공하는 방법'
 ---
 
+![API Data Crawling Cover](../images/cover_api.png)
+
 # 공공데이터포털 API 연동 및 데이터 전처리
 
 이번 포스팅에서는 **공공데이터포털(odcloud.kr)** 에서 제공하는 API를 활용하여 여러 페이지에 걸친 데이터를 반복문(`for`문)으로 한 번에 수집하고, 이를 `pandas`를 이용해 원하는 형태의 데이터프레임으로 전처리하는 과정을 공유합니다.
