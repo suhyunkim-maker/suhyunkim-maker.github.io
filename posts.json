@@ -1,5 +1,20 @@
 [
   {
+    "file": "gg-career-data-visualization.md",
+    "title": "경기데이터드림: 경력단절 여성 취업지원 교육과정 데이터 분석 시각화",
+    "date": "2026-05-19",
+    "tags": [
+      "Data Analysis",
+      "EDA",
+      "Open API",
+      "Mermaid",
+      "Visualization"
+    ],
+    "category": "Projects",
+    "description": "경기데이터드림 Open API를 통해 수집한 경력단절 여성 취업지원 교육훈련 프로그램 현황 데이터를 시각화하여 분석한 결과를 공유합니다.",
+    "excerpt": "이번 포스팅에서는 경기데이터드림 데이터를 바탕으로 도출된 핵심 집계 결과를 Mermaid 차트로 시각화하여 직종별 교육 인사이트를 확인해 봅니다."
+  },
+  {
     "file": "public-data-workflow-guide.md",
     "title": "공공데이터 분석 및 블로그 자동 배포 워크플로우",
     "date": "2026-05-19",
