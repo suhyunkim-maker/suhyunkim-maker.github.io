@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Google AI Studio(Gemini API)로 PDF 파일 핵심 키워드 요약 기능 구현하기"
-date: 2026-05-19
+date: 2026-05-13
 tags: ["Python", "Gemini API", "AI", "PDF", "PyMuPDF"]
 category: "Projects"
 description: "Gemini API와 PyMuPDF를 활용하여 PDF 문서에서 핵심 키워드 20개를 자동 추출하는 파이프라인을 구축해 봅니다."

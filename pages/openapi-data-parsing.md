@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Open API JSON 데이터를 Pandas DataFrame으로 변환하기"
-date: 2026-05-18
+date: 2026-04-27
 tags: ["Python", "Pandas", "API", "Data Analysis"]
 category: "Projects"
 description: "경기데이터드림 Open API를 활용하여 JSON 응답 데이터를 수집하고, pandas DataFrame으로 변환하는 과정을 단계별로 알아봅니다."

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Playwright MCP 크롤링부터 최저가 알림 봇 만들기 (카드뉴스 포함)"
-date: 2026-05-19
+date: 2026-04-24
 tags: ["Python", "Playwright", "Automation", "Bot"]
 category: "Projects"
 description: "AI 에이전트와 Playwright MCP를 활용한 번개장터 크롤링 경험과, 이를 활용한 최저가 알림 봇 파이썬 코드를 공유합니다."

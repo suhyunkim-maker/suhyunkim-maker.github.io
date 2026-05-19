@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "공공데이터 분석 및 블로그 자동 배포 워크플로우"
-date: 2026-05-19
+date: 2026-05-05
 tags: ["Python", "Automation", "API", "Data Analysis"]
 category: "Projects"
 description: "공공데이터포털 API 연동부터 데이터 분석, GitHub Pages 블로그 자동 배포까지의 전체 워크플로우 가이드입니다."

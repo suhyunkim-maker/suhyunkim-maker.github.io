@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "경기데이터드림: 경력단절 여성 취업지원 교육과정 데이터 분석 시각화"
-date: 2026-05-19
+date: 2026-04-30
 tags: ["Data Analysis", "EDA", "Open API", "Mermaid", "Visualization"]
 category: "Projects"
 description: "경기데이터드림 Open API를 통해 수집한 경력단절 여성 취업지원 교육훈련 프로그램 현황 데이터를 시각화하여 분석한 결과를 공유합니다."

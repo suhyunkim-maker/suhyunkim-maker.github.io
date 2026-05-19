@@ -1,6 +1,6 @@
 ---
 title: '공공데이터포털 API로 다중 페이지 데이터 수집 및 가공하기'
-date: 2026-05-15
+date: 2026-04-13
 tags: ['Python', 'Requests', 'Pandas', 'API']
 category: 'Projects'
 description: 'odcloud.kr 공공데이터 API를 활용해 여러 페이지의 데이터를 한 번에 가져오고 Pandas로 가공하는 방법'
