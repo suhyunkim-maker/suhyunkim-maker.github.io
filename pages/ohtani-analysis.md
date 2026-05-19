@@ -1,3 +1,11 @@
+---
+layout: post
+title: "Ohtani Analysis"
+date: 2026-04-20
+tags: []
+category: "Projects"
+---
+
 # [데이터 분석] 세이버매트릭스로 예측하는 오타니 선수의 올해 성적은?
 
 안녕하세요! 오늘은 야구 데이터 분석의 꽃이라 불리는 **세이버매트릭스(Sabermetrics)**를 활용하여, 메이저리그의 전설적인 선수 **오타니 쇼헤이(Shohei Ohtani)**의 2026년 성적을 예측해보는 과정을 단계별로 함께 살펴보겠습니다.

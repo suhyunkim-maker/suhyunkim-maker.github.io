@@ -1,3 +1,11 @@
+---
+layout: post
+title: "Data Preprocessing"
+date: 2026-04-06
+tags: []
+category: "Projects"
+---
+
 # 인스타그램 인플루언서 데이터 전처리 (Data Preprocessing)
 
 본 포스팅에서는 인스타그램 인플루언서 데이터 분석 프로젝트의 핵심 단계인 **데이터 전처리 과정**을 상세히 다룹니다. 원본 데이터를 분석 및 시각화(Tableau)에 적합한 형태로 변환하는 과정을 확인해 보세요.

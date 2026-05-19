@@ -1,3 +1,11 @@
+---
+layout: post
+title: "Bunjang Crawling Playwright"
+date: 2026-04-22
+tags: []
+category: "Projects"
+---
+
 # Playwright MCP를 활용한 번개장터 크롤링 자동화 🚀
 
 최근 AI 에이전트와 **MCP(Model Context Protocol)**를 활용해 브라우저를 제어하고 데이터를 수집하는 과정이 매우 편리해졌습니다. 이번 포스팅에서는 **Playwright MCP**를 연동하여 번개장터에서 '물티슈' 상품 데이터를 자동으로 스크래핑(크롤링)해 본 경험을 공유합니다.

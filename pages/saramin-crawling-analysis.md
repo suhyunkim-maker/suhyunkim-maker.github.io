@@ -1,3 +1,11 @@
+---
+layout: post
+title: "Saramin Crawling Analysis"
+date: 2026-04-15
+tags: []
+category: "Projects"
+---
+
 # 실전 크롤링: 사람인 채용 공고 데이터 분석 및 기술 스택 추출
 
 오늘 파이썬의 `Requests`와 `BeautifulSoup` 라이브러리를 활용하여 국내 대표 채용 사이트인 **사람인(Saramin)**에서 실시간 채용 정보를 수집하고 분석하는 프로젝트를 진행했습니다.
