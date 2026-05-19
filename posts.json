@@ -1,5 +1,20 @@
 [
   {
+    "file": "national-festival-openapi-eda.md",
+    "title": "전국문화축제표준데이터 OpenAPI로 지역별 문화축제 현황 분석하기",
+    "date": "2026-05-19",
+    "tags": [
+      "Python",
+      "Pandas",
+      "API",
+      "Data Analysis",
+      "EDA"
+    ],
+    "category": "Projects",
+    "description": "공공데이터포털의 전국문화축제표준데이터 Open API를 활용하여 데이터를 수집하고, pandas를 이용해 전국 지역별 축제 분포를 탐색적 데이터 분석(EDA) 해봅니다.",
+    "excerpt": "이번 포스팅에서는 공공데이터포털에서 제공하는 전국문화축제표준데이터 Open API를 활용하여 데이터를 수집하고 분석하는 전체 과정을 정리해 봅니다. 단순히 API를 호출하는 것을 넘어, 응답받은 JSON 데이터를 pandas DataFrame으로 변환하고, 데이터 전처리 후 시각화(EDA)까지 진행하여 인사이트를 도출하는 것이 핵심입니다."
+  },
+  {
     "file": "openapi-data-parsing.md",
     "title": "Open API JSON 데이터를 Pandas DataFrame으로 변환하기",
     "date": "2026-05-18",
