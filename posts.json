@@ -1,5 +1,19 @@
 [
   {
+    "file": "bunjang-price-alert-bot.md",
+    "title": "Playwright MCP 크롤링부터 최저가 알림 봇 만들기 (카드뉴스 포함)",
+    "date": "2026-05-19",
+    "tags": [
+      "Python",
+      "Playwright",
+      "Automation",
+      "Bot"
+    ],
+    "category": "Projects",
+    "description": "AI 에이전트와 Playwright MCP를 활용한 번개장터 크롤링 경험과, 이를 활용한 최저가 알림 봇 파이썬 코드를 공유합니다.",
+    "excerpt": "번개장터 물티슈 상품 데이터를 자동으로 스크래핑한 경험과, 수집한 데이터를 바탕으로 예산 이하의 '꿀매' 상품이 올라왔을 때 알려주는 최저가 알림 봇 파이썬 코드를 작성해 보았습니다."
+  },
+  {
     "file": "gg-career-data-visualization.md",
     "title": "경기데이터드림: 경력단절 여성 취업지원 교육과정 데이터 분석 시각화",
     "date": "2026-05-19",
