@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>hello su-hyun kim</title>
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/chatbot.css">
 </head>
 <body>
   <header>
@@ -65,6 +64,25 @@
   <script src="js/theme.js"></script>
   <script src="js/search.js"></script>
   <script src="js/app.js"></script>
-  <script src="js/chatbot.js"></script>
+
+  <!-- ===== 포트폴리오 AI 챗봇 ===== -->
+  <script>
+    window.ChatWidgetConfig = {
+      webhook: {
+        url: 'https://su0901.app.n8n.cloud/webhook/chat'
+      },
+      branding: {
+        name: 'Portfolio AI',
+        welcomeText: '안녕하세요! 저에 대해 궁금한 점을 물어보세요 😊',
+        responseTimeText: '잠시 후 답변드릴게요'
+      },
+      style: {
+        primaryColor: '#5c6bc0',
+        position: 'right'
+      }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/gh/juansebsol/n8n-chatbot-template@latest/chat-widget.js"></script>
+
 </body>
 </html>
