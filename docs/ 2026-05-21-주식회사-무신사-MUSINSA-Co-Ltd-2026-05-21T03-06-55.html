@@ -1,150 +1,511 @@
 <!doctype html>
 <html lang="ko">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>주식회사 무신사 (MUSINSA Co., Ltd.) — Research Note</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=JetBrains+Mono:wght@400;500&family=Pretendard+Variable&display=swap" rel="stylesheet">
-<style>
-:root{--ink:#0a0a0a;--paper:#fafaf7;--muted:#6b6b66;--line:#1a1a1a;--line-soft:#d8d6cf;--accent:#b8451f;}
-*{box-sizing:border-box;}
-html,body{margin:0;padding:0;background:var(--paper);color:var(--ink);font-family:'Pretendard Variable',Georgia,serif;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;}
-.page{max-width:720px;margin:0 auto;padding:64px 32px 120px;}
-.masthead{display:flex;justify-content:space-between;align-items:baseline;padding-bottom:12px;border-bottom:1px solid var(--line);margin-bottom:48px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);}
-.masthead .left{font-weight:500;color:var(--ink);}
-.kicker{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;}
-h1{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:44px;line-height:1.1;letter-spacing:-0.02em;margin:0 0 20px;}
-.standfirst{font-family:'Fraunces',Georgia,serif;font-size:19px;line-height:1.5;color:var(--muted);margin-bottom:40px;max-width:600px;}
-.byline{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);padding-bottom:32px;margin-bottom:48px;border-bottom:1px solid var(--line-soft);}
-.byline span+span::before{content:" · ";margin:0 4px;}
-.tldr{margin:0 0 56px;padding:24px 28px;border-left:2px solid var(--ink);}
-.tldr-label{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;}
-.tldr p{margin:0 0 8px;font-size:16px;line-height:1.55;}
-.tldr p:last-child{margin-bottom:0;}
-h2{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:26px;letter-spacing:-0.01em;margin:56px 0 20px;padding-top:24px;border-top:1px solid var(--line);}
-h2 .num{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;color:var(--muted);margin-right:12px;vertical-align:4px;}
-p{margin:0 0 16px;}
-.facts{display:grid;grid-template-columns:140px 1fr;gap:4px 32px;margin:32px 0 40px;padding:24px 0;border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);font-size:14px;}
-.facts dt{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);padding-top:4px;}
-.facts dd{margin:0;padding-bottom:12px;border-bottom:1px dotted var(--line-soft);}
-.facts dd:last-of-type{border-bottom:none;padding-bottom:0;}
-.competitor-list{margin:0;padding:0;list-style:none;}
-.competitor-list li{padding:20px 0;border-bottom:1px solid var(--line-soft);}
-.competitor-list li:last-child{border-bottom:none;}
-.competitor-list h3{font-family:'Fraunces',Georgia,serif;font-size:18px;font-weight:600;margin:0 0 6px;}
-.competitor-list h3 .url{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);font-weight:400;margin-left:8px;text-decoration:none;}
-.competitor-list .pos{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);text-transform:uppercase;margin-bottom:8px;}
-.competitor-list p{font-size:15px;margin:0;}
-table.opportunities{width:100%;border-collapse:collapse;margin:24px 0 40px;font-size:14px;}
-.opportunities th{text-align:left;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);padding:10px 12px 10px 0;border-bottom:1px solid var(--line);}
-.opportunities td{padding:16px 12px 16px 0;border-bottom:1px solid var(--line-soft);vertical-align:top;line-height:1.5;}
-.opportunities td:first-child{font-family:'JetBrains Mono',monospace;color:var(--muted);font-size:12px;width:28px;}
-.priority{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.08em;padding:2px 7px;text-transform:uppercase;border:1px solid var(--ink);}
-.priority.high{background:var(--ink);color:var(--paper);}
-.priority.med{background:transparent;color:var(--ink);}
-.priority.low{background:transparent;color:var(--muted);border-color:var(--line-soft);}
-.next-action{margin:32px 0 48px;padding:28px 32px;background:var(--ink);color:var(--paper);}
-.next-action .label{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#999;margin-bottom:10px;}
-.next-action p{font-family:'Fraunces',Georgia,serif;font-size:18px;line-height:1.5;margin:0;}
-.sources{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);font-size:13px;color:var(--muted);}
-.sources-label{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink);margin-bottom:12px;}
-.sources ol{padding-left:20px;margin:0;font-family:'JetBrains Mono',monospace;font-size:12px;line-height:1.8;}
-.sources ol a{color:var(--accent);text-decoration:none;word-break:break-all;}
-.colophon{margin-top:80px;padding-top:24px;border-top:1px solid var(--line-soft);font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);text-transform:uppercase;display:flex;justify-content:space-between;}
-</style>
-</head>
-<body>
-<div class="page">
-  <div class="masthead">
-    <div class="left">RESEARCH NOTE / 패션 플랫폼 및 커머스</div>
-    <div class="right">VOL.349 · 2026-05-21</div>
-  </div>
-  <div class="kicker">company · 1-page brief</div>
-  <h1>주식회사 무신사 (MUSINSA Co., Ltd.)</h1>
-  <p class="standfirst">무신사는 단순 패션 커머스를 넘어 오프라인 영토 확장과 글로벌 K-패션 인큐베이팅 플랫폼으로의 체질 개선을 통해 독점적 지위를 공고히 하고 있다.</p>
-  <div class="byline">
-    <span>Compiled by n8n research workflow</span>
-    <span>3 sources</span>
-    <span>~3 min read</span>
-  </div>
-  <div class="tldr">
-    <div class="tldr-label">TL;DR</div>
-    <p>오프라인 영토 확장과 글로벌 진출을 통한 옴니채널 패션 플랫폼으로의 진화.</p>
-    <p>PB 브랜드 '무신사 스탠다드'의 고성장으로 수익성 개선 및 오프라인 집객 효과 극대화.</p>
-    <p>단순 커머스를 넘어 사용자의 콘텐츠 소비 시간을 점유하기 위한 미디어 커머스 전략 강화.</p>
-  </div>
-  <h2><span class="num">01</span>회사 개요</h2>
-  <p>무신사는 대한민국을 대표하는 온라인 패션 스토어로, 다양한 브랜드의 입점과 자체 브랜드(MUSINSA STANDARD)를 통해 패션 트렌드를 선도합니다. 최근에는 오프라인 플래그십 스토어 확장과 글로벌 시장 진출을 가속화하며 옴니채널 플랫폼으로 진화하고 있습니다.</p>
-  <dl class="facts">
-    <dt>주요 고객</dt><dd>트렌디한 패션과 브랜드를 선호하는 10대부터 30대 사이의 국내외 소비자</dd>
-    <dt>비즈니스 모델</dt><dd>입점 브랜드 판매 수수료, 자체 브랜드(PB) 상품 판매, 광고 및 마케팅 대행 서비스</dd>
-    <dt>최근 이슈</dt><dd>성수, 홍대 등 핵심 상권 중심의 오프라인 플래그십 스토어 '무신사 스토어' 공격적 확장 및 글로벌 앱 고도화</dd>
-  </dl>
-  <h2><span class="num">02</span>경쟁 지형</h2>
-  <p>무신사의 경쟁 지형은 단순 패션 쇼핑몰을 넘어, 사용자의 시각적 영감과 여가 시간을 점유하는 콘텐츠 및 소셜 플랫폼으로 확장되고 있습니다.</p>
-  <ol class="competitor-list">
-    <li>
-        <h3>인스타그램 (Instagram) <a href="https://www.instagram.com" class="url">↗ www.instagram.com</a></h3>
-        <div class="pos">포지셔닝 — 비주얼 트렌드 발견 및 소셜 네트워킹</div>
-        <p>사용자가 일상적으로 패션 영감을 얻고 소통하는 공간으로, 무신사 앱 진입 전에 트렌드 탐색 시간을 선점합니다.</p>
-      </li>
-<li>
-        <h3>유튜브 (YouTube) <a href="https://www.youtube.com" class="url">↗ www.youtube.com</a></h3>
-        <div class="pos">포지셔닝 — 영상 기반 패션 큐레이션 및 엔터테인먼트</div>
-        <p>패션 유튜버들의 룩북, 하울 콘텐츠를 통해 사용자의 체류 시간을 대거 흡수하며 구매 결정에 직접적인 영향을 미칩니다.</p>
-      </li>
-<li>
-        <h3>네이버 쇼핑 (Naver Shopping) <a href="https://shopping.naver.com" class="url">↗ shopping.naver.com</a></h3>
-        <div class="pos">포지셔닝 — 종합 검색 기반 쇼핑 및 콘텐츠 포털</div>
-        <p>네이버 페이 생태계와 강력한 검색 기능을 바탕으로 사용자가 패션 아이템을 비교 분석하고 소비하는 일상적 시간을 지배합니다.</p>
-      </li>
-  </ol>
-  <h2><span class="num">03</span>자동화 기회</h2>
-  <p>무신사는 방대한 패션 데이터와 콘텐츠를 보유하고 있어, 생성형 AI와 LLM을 활용한 업무 자동화의 잠재력이 매우 높습니다.</p>
-  <table class="opportunities">
-    <thead><tr><th>#</th><th>영역</th><th>현재 반복 업무</th><th>자동화 가설</th><th>기대 효과</th><th>P</th></tr></thead>
-    <tbody><tr>
-        <td>01</td>
-        <td>패션 에디토리얼 및 상품 설명 자동 생성</td>
-        <td>에디터와 MD가 직접 입점 브랜드의 상품 특징을 분석하여 트렌디한 설명 문구와 스타일링 가이드를 작성함.</td>
-        <td>브랜드 이미지와 메타데이터를 LLM에 입력하여 무신사 특유의 톤앤매너를 반영한 상품 설명 및 에디토리얼 카피를 자동 생성함.</td>
-        <td>콘텐츠 제작 시간을 80% 단축하고, 일관된 고품질의 스타일 큐레이션 콘텐츠를 실시간으로 대량 발행 가능.</td>
-        <td><span class="priority high">High</span></td>
-      </tr>
-<tr>
-        <td>02</td>
-        <td>글로벌 다국어 상품 태깅 및 현지화</td>
-        <td>해외 진출을 위해 한국어 기반의 상세 페이지와 상품 태그 정보를 번역가들이 수동으로 현지 언어 및 문화적 맥락에 맞게 수정함.</td>
-        <td>LLM 기반의 다국어 번역 및 현지 패션 은어/트렌드를 반영한 자동 태깅 시스템을 구축하여 글로벌 상품 등록 프로세스를 자동화함.</td>
-        <td>글로벌 상품 등록 리드타임을 90% 단축하고, 현지 검색 최적화(SEO) 노출 빈도를 극대화함.</td>
-        <td><span class="priority high">High</span></td>
-      </tr>
-<tr>
-        <td>03</td>
-        <td>고객 후기 분석 및 스타일 피드백 자동 분류</td>
-        <td>매일 수만 건씩 등록되는 사용자 스타일 후기와 핏(Fit) 피드백을 담당자가 모니터링하여 불량이나 사이즈 이슈를 수동 분류함.</td>
-        <td>자연어 처리(NLP)와 LLM을 활용해 텍스트 및 이미지 후기를 실시간 분석하여 사이즈 만족도, 재질 불만 등을 자동 분류하고 브랜드사에 피드백 리포트를 자동 전송함.</td>
-        <td>CS 모니터링 리소스를 70% 절감하고, 브랜드 파트너사의 상품 개선 주기를 획기적으로 단축함.</td>
-        <td><span class="priority medium">Med</span></td>
-      </tr></tbody>
-  </table>
-  <h2><span class="num">04</span>So What — 다음 행동</h2>
-  <div class="next-action">
-    <div class="label">RECOMMENDED NEXT</div>
-    <p>무신사는 글로벌 확장 가속화를 위해 다국어 패션 특화 LLM 파이프라인을 조기에 구축하고, 오프라인 매장과의 데이터 연동을 통한 개인화 추천 알고리즘 고도화에 집중해야 합니다.</p>
-  </div>
-  <div class="sources">
-    <div class="sources-label">Sources</div>
-    <ol><li><a href="https://news.musinsa.com">https://news.musinsa.com</a></li>
-<li><a href="https://www.musinsa.com">https://www.musinsa.com</a></li>
-<li><a href="https://www.musinsastandard.com">https://www.musinsastandard.com</a></li></ol>
-  </div>
-  <div class="colophon">
-    <div>n8n // research-brief v1.2</div>
-    <div>For internal review only</div>
-  </div>
-</div>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>주식회사 무신사 (MUSINSA Co., Ltd.) — Research Note</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=JetBrains+Mono:wght@400;500&family=Pretendard+Variable&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #0a0a0a;
+        --paper: #fafaf7;
+        --muted: #6b6b66;
+        --line: #1a1a1a;
+        --line-soft: #d8d6cf;
+        --accent: #b8451f;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Pretendard Variable", Georgia, serif;
+        font-size: 16px;
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+      }
+      .page {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 64px 32px 120px;
+      }
+      .masthead {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        padding-bottom: 12px;
+        border-bottom: 1px solid var(--line);
+        margin-bottom: 48px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .masthead .left {
+        font-weight: 500;
+        color: var(--ink);
+      }
+      .kicker {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 16px;
+      }
+      h1 {
+        font-family: "Fraunces", Georgia, serif;
+        font-weight: 600;
+        font-size: 44px;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        margin: 0 0 20px;
+      }
+      .standfirst {
+        font-family: "Fraunces", Georgia, serif;
+        font-size: 19px;
+        line-height: 1.5;
+        color: var(--muted);
+        margin-bottom: 40px;
+        max-width: 600px;
+      }
+      .byline {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        color: var(--muted);
+        padding-bottom: 32px;
+        margin-bottom: 48px;
+        border-bottom: 1px solid var(--line-soft);
+      }
+      .byline span + span::before {
+        content: " · ";
+        margin: 0 4px;
+      }
+      .tldr {
+        margin: 0 0 56px;
+        padding: 24px 28px;
+        border-left: 2px solid var(--ink);
+      }
+      .tldr-label {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 12px;
+      }
+      .tldr p {
+        margin: 0 0 8px;
+        font-size: 16px;
+        line-height: 1.55;
+      }
+      .tldr p:last-child {
+        margin-bottom: 0;
+      }
+      h2 {
+        font-family: "Fraunces", Georgia, serif;
+        font-weight: 600;
+        font-size: 26px;
+        letter-spacing: -0.01em;
+        margin: 56px 0 20px;
+        padding-top: 24px;
+        border-top: 1px solid var(--line);
+      }
+      h2 .num {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--muted);
+        margin-right: 12px;
+        vertical-align: 4px;
+      }
+      p {
+        margin: 0 0 16px;
+      }
+      .facts {
+        display: grid;
+        grid-template-columns: 140px 1fr;
+        gap: 4px 32px;
+        margin: 32px 0 40px;
+        padding: 24px 0;
+        border-top: 1px solid var(--line-soft);
+        border-bottom: 1px solid var(--line-soft);
+        font-size: 14px;
+      }
+      .facts dt {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+        padding-top: 4px;
+      }
+      .facts dd {
+        margin: 0;
+        padding-bottom: 12px;
+        border-bottom: 1px dotted var(--line-soft);
+      }
+      .facts dd:last-of-type {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+      .competitor-list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      .competitor-list li {
+        padding: 20px 0;
+        border-bottom: 1px solid var(--line-soft);
+      }
+      .competitor-list li:last-child {
+        border-bottom: none;
+      }
+      .competitor-list h3 {
+        font-family: "Fraunces", Georgia, serif;
+        font-size: 18px;
+        font-weight: 600;
+        margin: 0 0 6px;
+      }
+      .competitor-list h3 .url {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        color: var(--accent);
+        font-weight: 400;
+        margin-left: 8px;
+        text-decoration: none;
+      }
+      .competitor-list .pos {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        color: var(--muted);
+        text-transform: uppercase;
+        margin-bottom: 8px;
+      }
+      .competitor-list p {
+        font-size: 15px;
+        margin: 0;
+      }
+      table.opportunities {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 24px 0 40px;
+        font-size: 14px;
+      }
+      .opportunities th {
+        text-align: left;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+        padding: 10px 12px 10px 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .opportunities td {
+        padding: 16px 12px 16px 0;
+        border-bottom: 1px solid var(--line-soft);
+        vertical-align: top;
+        line-height: 1.5;
+      }
+      .opportunities td:first-child {
+        font-family: "JetBrains Mono", monospace;
+        color: var(--muted);
+        font-size: 12px;
+        width: 28px;
+      }
+      .priority {
+        display: inline-block;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 10px;
+        letter-spacing: 0.08em;
+        padding: 2px 7px;
+        text-transform: uppercase;
+        border: 1px solid var(--ink);
+      }
+      .priority.high {
+        background: var(--ink);
+        color: var(--paper);
+      }
+      .priority.med {
+        background: transparent;
+        color: var(--ink);
+      }
+      .priority.low {
+        background: transparent;
+        color: var(--muted);
+        border-color: var(--line-soft);
+      }
+      .next-action {
+        margin: 32px 0 48px;
+        padding: 28px 32px;
+        background: var(--ink);
+        color: var(--paper);
+      }
+      .next-action .label {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #999;
+        margin-bottom: 10px;
+      }
+      .next-action p {
+        font-family: "Fraunces", Georgia, serif;
+        font-size: 18px;
+        line-height: 1.5;
+        margin: 0;
+      }
+      .sources {
+        margin-top: 56px;
+        padding-top: 24px;
+        border-top: 1px solid var(--line);
+        font-size: 13px;
+        color: var(--muted);
+      }
+      .sources-label {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--ink);
+        margin-bottom: 12px;
+      }
+      .sources ol {
+        padding-left: 20px;
+        margin: 0;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        line-height: 1.8;
+      }
+      .sources ol a {
+        color: var(--accent);
+        text-decoration: none;
+        word-break: break-all;
+      }
+      .colophon {
+        margin-top: 80px;
+        padding-top: 24px;
+        border-top: 1px solid var(--line-soft);
+        font-family: "JetBrains Mono", monospace;
+        font-size: 10px;
+        color: var(--muted);
+        text-transform: uppercase;
+        display: flex;
+        justify-content: space-between;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="masthead">
+        <div class="left">RESEARCH NOTE / 패션 플랫폼 및 커머스</div>
+        <div class="right">VOL.349 · 2026-05-21</div>
+      </div>
+      <div class="kicker">company · 1-page brief</div>
+      <h1>주식회사 무신사 (MUSINSA Co., Ltd.)</h1>
+      <p class="standfirst">
+        무신사는 단순 패션 커머스를 넘어 오프라인 영토 확장과 글로벌 K-패션
+        인큐베이팅 플랫폼으로의 체질 개선을 통해 독점적 지위를 공고히 하고 있다.
+      </p>
+      <div class="byline">
+        <span>Compiled by n8n research workflow</span>
+        <span>3 sources</span>
+        <span>~3 min read</span>
+      </div>
+      <div class="tldr">
+        <div class="tldr-label">TL;DR</div>
+        <p>
+          오프라인 영토 확장과 글로벌 진출을 통한 옴니채널 패션 플랫폼으로의
+          진화.
+        </p>
+        <p>
+          PB 브랜드 '무신사 스탠다드'의 고성장으로 수익성 개선 및 오프라인 집객
+          효과 극대화.
+        </p>
+        <p>
+          단순 커머스를 넘어 사용자의 콘텐츠 소비 시간을 점유하기 위한 미디어
+          커머스 전략 강화.
+        </p>
+      </div>
+      <h2><span class="num">01</span>회사 개요</h2>
+      <p>
+        무신사는 대한민국을 대표하는 온라인 패션 스토어로, 다양한 브랜드의
+        입점과 자체 브랜드(MUSINSA STANDARD)를 통해 패션 트렌드를 선도합니다.
+        최근에는 오프라인 플래그십 스토어 확장과 글로벌 시장 진출을 가속화하며
+        옴니채널 플랫폼으로 진화하고 있습니다.
+      </p>
+      <dl class="facts">
+        <dt>주요 고객</dt>
+        <dd>
+          트렌디한 패션과 브랜드를 선호하는 10대부터 30대 사이의 국내외 소비자
+        </dd>
+        <dt>비즈니스 모델</dt>
+        <dd>
+          입점 브랜드 판매 수수료, 자체 브랜드(PB) 상품 판매, 광고 및 마케팅
+          대행 서비스
+        </dd>
+        <dt>최근 이슈</dt>
+        <dd>
+          성수, 홍대 등 핵심 상권 중심의 오프라인 플래그십 스토어 '무신사
+          스토어' 공격적 확장 및 글로벌 앱 고도화
+        </dd>
+      </dl>
+      <h2><span class="num">02</span>경쟁 지형</h2>
+      <p>
+        무신사의 경쟁 지형은 단순 패션 쇼핑몰을 넘어, 사용자의 시각적 영감과
+        여가 시간을 점유하는 콘텐츠 및 소셜 플랫폼으로 확장되고 있습니다.
+      </p>
+      <ol class="competitor-list">
+        <li>
+          <h3>
+            인스타그램 (Instagram)
+            <a href="https://www.instagram.com" class="url"
+              >↗ www.instagram.com</a
+            >
+          </h3>
+          <div class="pos">포지셔닝 — 비주얼 트렌드 발견 및 소셜 네트워킹</div>
+          <p>
+            사용자가 일상적으로 패션 영감을 얻고 소통하는 공간으로, 무신사 앱
+            진입 전에 트렌드 탐색 시간을 선점합니다.
+          </p>
+        </li>
+        <li>
+          <h3>
+            유튜브 (YouTube)
+            <a href="https://www.youtube.com" class="url">↗ www.youtube.com</a>
+          </h3>
+          <div class="pos">
+            포지셔닝 — 영상 기반 패션 큐레이션 및 엔터테인먼트
+          </div>
+          <p>
+            패션 유튜버들의 룩북, 하울 콘텐츠를 통해 사용자의 체류 시간을 대거
+            흡수하며 구매 결정에 직접적인 영향을 미칩니다.
+          </p>
+        </li>
+        <li>
+          <h3>
+            네이버 쇼핑 (Naver Shopping)
+            <a href="https://shopping.naver.com" class="url"
+              >↗ shopping.naver.com</a
+            >
+          </h3>
+          <div class="pos">포지셔닝 — 종합 검색 기반 쇼핑 및 콘텐츠 포털</div>
+          <p>
+            네이버 페이 생태계와 강력한 검색 기능을 바탕으로 사용자가 패션
+            아이템을 비교 분석하고 소비하는 일상적 시간을 지배합니다.
+          </p>
+        </li>
+      </ol>
+      <h2><span class="num">03</span>자동화 기회</h2>
+      <p>
+        무신사는 방대한 패션 데이터와 콘텐츠를 보유하고 있어, 생성형 AI와 LLM을
+        활용한 업무 자동화의 잠재력이 매우 높습니다.
+      </p>
+      <table class="opportunities">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>영역</th>
+            <th>현재 반복 업무</th>
+            <th>자동화 가설</th>
+            <th>기대 효과</th>
+            <th>P</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>01</td>
+            <td>패션 에디토리얼 및 상품 설명 자동 생성</td>
+            <td>
+              에디터와 MD가 직접 입점 브랜드의 상품 특징을 분석하여 트렌디한
+              설명 문구와 스타일링 가이드를 작성함.
+            </td>
+            <td>
+              브랜드 이미지와 메타데이터를 LLM에 입력하여 무신사 특유의
+              톤앤매너를 반영한 상품 설명 및 에디토리얼 카피를 자동 생성함.
+            </td>
+            <td>
+              콘텐츠 제작 시간을 80% 단축하고, 일관된 고품질의 스타일 큐레이션
+              콘텐츠를 실시간으로 대량 발행 가능.
+            </td>
+            <td><span class="priority high">High</span></td>
+          </tr>
+          <tr>
+            <td>02</td>
+            <td>글로벌 다국어 상품 태깅 및 현지화</td>
+            <td>
+              해외 진출을 위해 한국어 기반의 상세 페이지와 상품 태그 정보를
+              번역가들이 수동으로 현지 언어 및 문화적 맥락에 맞게 수정함.
+            </td>
+            <td>
+              LLM 기반의 다국어 번역 및 현지 패션 은어/트렌드를 반영한 자동 태깅
+              시스템을 구축하여 글로벌 상품 등록 프로세스를 자동화함.
+            </td>
+            <td>
+              글로벌 상품 등록 리드타임을 90% 단축하고, 현지 검색 최적화(SEO)
+              노출 빈도를 극대화함.
+            </td>
+            <td><span class="priority high">High</span></td>
+          </tr>
+          <tr>
+            <td>03</td>
+            <td>고객 후기 분석 및 스타일 피드백 자동 분류</td>
+            <td>
+              매일 수만 건씩 등록되는 사용자 스타일 후기와 핏(Fit) 피드백을
+              담당자가 모니터링하여 불량이나 사이즈 이슈를 수동 분류함.
+            </td>
+            <td>
+              자연어 처리(NLP)와 LLM을 활용해 텍스트 및 이미지 후기를 실시간
+              분석하여 사이즈 만족도, 재질 불만 등을 자동 분류하고 브랜드사에
+              피드백 리포트를 자동 전송함.
+            </td>
+            <td>
+              CS 모니터링 리소스를 70% 절감하고, 브랜드 파트너사의 상품 개선
+              주기를 획기적으로 단축함.
+            </td>
+            <td><span class="priority medium">Med</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <h2><span class="num">04</span>So What — 다음 행동</h2>
+      <div class="next-action">
+        <div class="label">RECOMMENDED NEXT</div>
+        <p>
+          무신사는 글로벌 확장 가속화를 위해 다국어 패션 특화 LLM 파이프라인을
+          조기에 구축하고, 오프라인 매장과의 데이터 연동을 통한 개인화 추천
+          알고리즘 고도화에 집중해야 합니다.
+        </p>
+      </div>
+      <div class="sources">
+        <div class="sources-label">Sources</div>
+        <ol>
+          <li>
+            <a href="https://news.musinsa.com">https://news.musinsa.com</a>
+          </li>
+          <li><a href="https://www.musinsa.com">https://www.musinsa.com</a></li>
+          <li>
+            <a href="https://www.musinsastandard.com"
+              >https://www.musinsastandard.com</a
+            >
+          </li>
+        </ol>
+      </div>
+      <div class="colophon">
+        <div>n8n // research-brief v1.2</div>
+        <div>For internal review only</div>
+      </div>
+    </div>
+  </body>
 </html>

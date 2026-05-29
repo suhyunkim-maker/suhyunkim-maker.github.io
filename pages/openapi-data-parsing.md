@@ -63,6 +63,7 @@ Python 코드로 구조를 한 단계씩 벗겨냅니다.
 json_data = response.json()
 service_data = json_data[SERVICE_NAME]
 ```
+
 `service_data`의 0번째는 `head`(응답 정보), 1번째는 `row`(실제 데이터)가 들어있음을 확인할 수 있습니다.
 
 ## 4. DataFrame으로 변환하기

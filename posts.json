@@ -3,13 +3,7 @@
     "file": "gemini-pdf-keyword-summary.md",
     "title": "Google AI Studio(Gemini API)로 PDF 파일 핵심 키워드 요약 기능 구현하기",
     "date": "2026-05-19",
-    "tags": [
-      "Python",
-      "Gemini API",
-      "AI",
-      "PDF",
-      "PyMuPDF"
-    ],
+    "tags": ["Python", "Gemini API", "AI", "PDF", "PyMuPDF"],
     "category": "Projects",
     "description": "Gemini API와 PyMuPDF를 활용하여 PDF 문서에서 핵심 키워드 20개를 자동 추출하는 파이프라인을 구축해 봅니다.",
     "excerpt": "Google AI Studio의 Gemini API와 파이썬 PyMuPDF 라이브러리를 활용하여 PDF 파일 텍스트를 자동으로 분석하고 가장 중요한 키워드 20개를 추출하는 앱 서비스 백엔드 코드를 소개합니다."
@@ -18,12 +12,7 @@
     "file": "bunjang-price-alert-bot.md",
     "title": "Playwright MCP 크롤링부터 최저가 알림 봇 만들기 (카드뉴스 포함)",
     "date": "2026-05-19",
-    "tags": [
-      "Python",
-      "Playwright",
-      "Automation",
-      "Bot"
-    ],
+    "tags": ["Python", "Playwright", "Automation", "Bot"],
     "category": "Projects",
     "description": "AI 에이전트와 Playwright MCP를 활용한 번개장터 크롤링 경험과, 이를 활용한 최저가 알림 봇 파이썬 코드를 공유합니다.",
     "excerpt": "번개장터 물티슈 상품 데이터를 자동으로 스크래핑한 경험과, 수집한 데이터를 바탕으로 예산 이하의 '꿀매' 상품이 올라왔을 때 알려주는 최저가 알림 봇 파이썬 코드를 작성해 보았습니다."
@@ -32,13 +21,7 @@
     "file": "gg-career-data-visualization.md",
     "title": "경기데이터드림: 경력단절 여성 취업지원 교육과정 데이터 분석 시각화",
     "date": "2026-05-19",
-    "tags": [
-      "Data Analysis",
-      "EDA",
-      "Open API",
-      "Mermaid",
-      "Visualization"
-    ],
+    "tags": ["Data Analysis", "EDA", "Open API", "Mermaid", "Visualization"],
     "category": "Projects",
     "description": "경기데이터드림 Open API를 통해 수집한 경력단절 여성 취업지원 교육훈련 프로그램 현황 데이터를 시각화하여 분석한 결과를 공유합니다.",
     "excerpt": "이번 포스팅에서는 경기데이터드림 데이터를 바탕으로 도출된 핵심 집계 결과를 Mermaid 차트로 시각화하여 직종별 교육 인사이트를 확인해 봅니다."
@@ -47,12 +30,7 @@
     "file": "public-data-workflow-guide.md",
     "title": "공공데이터 분석 및 블로그 자동 배포 워크플로우",
     "date": "2026-05-19",
-    "tags": [
-      "Python",
-      "Automation",
-      "API",
-      "Data Analysis"
-    ],
+    "tags": ["Python", "Automation", "API", "Data Analysis"],
     "category": "Projects",
     "description": "공공데이터포털 API 연동부터 데이터 분석, GitHub Pages 블로그 자동 배포까지의 전체 워크플로우 가이드입니다.",
     "excerpt": "본 포스팅에서는 공공데이터 Open API를 수집, pandas로 분석한 뒤, GitHub 블로그에 자동으로 포스팅을 발행하는 과정을 안내합니다."
@@ -61,13 +39,7 @@
     "file": "national-festival-openapi-eda.md",
     "title": "전국문화축제표준데이터 OpenAPI로 지역별 문화축제 현황 분석하기",
     "date": "2026-05-19",
-    "tags": [
-      "Python",
-      "Pandas",
-      "API",
-      "Data Analysis",
-      "EDA"
-    ],
+    "tags": ["Python", "Pandas", "API", "Data Analysis", "EDA"],
     "category": "Projects",
     "description": "공공데이터포털의 전국문화축제표준데이터 Open API를 활용하여 데이터를 수집하고, pandas를 이용해 전국 지역별 축제 분포를 탐색적 데이터 분석(EDA) 해봅니다.",
     "excerpt": "이번 포스팅에서는 공공데이터포털에서 제공하는 전국문화축제표준데이터 Open API를 활용하여 데이터를 수집하고 분석하는 전체 과정을 정리해 봅니다. 단순히 API를 호출하는 것을 넘어, 응답받은 JSON 데이터를 pandas DataFrame으로 변환하고, 데이터 전처리 후 시각화(EDA)까지 진행하여 인사이트를 도출하는 것이 핵심입니다."
@@ -76,12 +48,7 @@
     "file": "openapi-data-parsing.md",
     "title": "Open API JSON 데이터를 Pandas DataFrame으로 변환하기",
     "date": "2026-05-18",
-    "tags": [
-      "Python",
-      "Pandas",
-      "API",
-      "Data Analysis"
-    ],
+    "tags": ["Python", "Pandas", "API", "Data Analysis"],
     "category": "Projects",
     "description": "경기데이터드림 Open API를 활용하여 JSON 응답 데이터를 수집하고, pandas DataFrame으로 변환하는 과정을 단계별로 알아봅니다.",
     "excerpt": "이번 실습에서는 경기데이터드림 Open API를 활용하여 공공데이터 JSON 응답을 성공적으로 수집하고, 이를 데이터 분석에 적합한 pandas DataFrame 구조로 변환하는 방법을 다룹니다."
@@ -117,12 +84,7 @@
     "file": "odcloud-api-crawling.md",
     "title": "공공데이터포털 API로 다중 페이지 데이터 수집 및 가공하기",
     "date": "2026-05-15",
-    "tags": [
-      "Python",
-      "Requests",
-      "Pandas",
-      "API"
-    ],
+    "tags": ["Python", "Requests", "Pandas", "API"],
     "category": "Projects",
     "description": "odcloud.kr 공공데이터 API를 활용해 여러 페이지의 데이터를 한 번에 가져오고 Pandas로 가공하는 방법",
     "excerpt": "이번 포스팅에서는  에서 제공하는 API를 활용하여 여러 페이지에 걸친 데이터를 반복문(`for`문)으로 한 번에 수집하고, 이를 `pandas`를 이용해 원하는 형태의 데이터프레임으로 전처리하는 과정을 공유합니다. `requests` 라이브러리를 사용하여 API에 요청을 보냅니다. `api.odcloud.kr`은 일반적인 공공데이터 API(data.go...."
@@ -158,11 +120,7 @@
     "file": "instagram-analysis.md",
     "title": "인스타그램 인플루언서 데이터 분석",
     "date": "2025-05-08",
-    "tags": [
-      "Pandas",
-      "Google Colab",
-      "Data Analysis"
-    ],
+    "tags": ["Pandas", "Google Colab", "Data Analysis"],
     "category": "Projects",
     "description": "메인 인스타그램 인플루언서에 대한 데이터 분석 및 추천 방법",
     "excerpt": "메인 인스타그램 인플루언서에 대한 데이터 분석 프로젝트입니다. - : Pandas - : Google Colab - 데이터 기반 인플루언서 추천 - 구글 코랩을 활용한 데이터 분석 코딩"
@@ -171,10 +129,7 @@
     "file": "example.md",
     "title": "첫 번째 게시글",
     "date": "2025-01-26",
-    "tags": [
-      "JavaScript",
-      "Web"
-    ],
+    "tags": ["JavaScript", "Web"],
     "category": "Development",
     "description": "게시글 설명",
     "excerpt": "여기에 마크다운 형식으로 내용을 작성합니다."

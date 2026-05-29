@@ -1,9 +1,9 @@
 ---
-title: '인스타그램 인플루언서 데이터 분석'
+title: "인스타그램 인플루언서 데이터 분석"
 date: 2025-05-08
-tags: ['Pandas', 'Google Colab', 'Data Analysis']
-category: 'Projects'
-description: '메인 인스타그램 인플루언서에 대한 데이터 분석 및 추천 방법'
+tags: ["Pandas", "Google Colab", "Data Analysis"]
+category: "Projects"
+description: "메인 인스타그램 인플루언서에 대한 데이터 분석 및 추천 방법"
 ---
 
 # 인스타그램 인플루언서 데이터 분석
@@ -11,11 +11,13 @@ description: '메인 인스타그램 인플루언서에 대한 데이터 분석 
 메인 인스타그램 인플루언서에 대한 데이터 분석 프로젝트입니다.
 
 ### 💻 프로젝트 환경
+
 - **개발환경**: Pandas
 - **도구**: Google Colab
 
 ### 📊 주요 내용
+
 - 데이터 기반 인플루언서 추천
 - 구글 코랩을 활용한 데이터 분석 코딩
 
-*(상세 내용은 추후에 계속 추가할 예정입니다)*
+_(상세 내용은 추후에 계속 추가할 예정입니다)_

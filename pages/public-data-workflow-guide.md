@@ -14,6 +14,7 @@ description: "공공데이터포털 API 연동부터 데이터 분석, GitHub Pa
 ---
 
 ## 1. 사전 준비 (Prerequisites)
+
 - **API 인증키 발급**: 공공데이터포털에서 활용할 API(예: 전국문화축제표준데이터)의 활용 신청을 완료하고 `서비스 키(Decoding)`를 확보합니다.
 - **Python 환경 준비**: `requests`, `pandas`, `matplotlib` 라이브러리가 설치되어 있어야 합니다.
 - **블로그 저장소**: GitHub Pages로 호스팅되는 개인 블로그 저장소(Repository)가 로컬에 Clone 되어 있어야 합니다.
@@ -23,6 +24,7 @@ description: "공공데이터포털 API 연동부터 데이터 분석, GitHub Pa
 ## 2. 1단계: Open API 데이터 수집 (Jupyter Notebook / Python)
 
 ### API 호출 및 반복 수집 (Pagination)
+
 API의 한 페이지에 보여지는 데이터 수(`numOfRows`)의 한계가 있으므로, 전체 개수(`totalCount`)를 기반으로 전체 페이지 수를 계산하여 모든 데이터를 수집합니다.
 
 ```python
@@ -59,6 +61,7 @@ df_raw = pd.DataFrame(all_rows)
 수집된 데이터는 영문 키값이나 문자열 형식의 날짜 등으로 되어 있으므로, 분석하기 좋은 형태로 변환합니다.
 
 ### 2-1. 데이터 전처리
+
 ```python
 # 컬럼명 한글화
 rename_dict = {"fstvlNm": "축제명", "fstvlStartDate": "시작일", "fstvlEndDate": "종료일", "rdnmadr": "도로명주소"}
@@ -75,6 +78,7 @@ df["시도명"] = df["도로명주소"].astype(str).str.split().str[0]
 ```
 
 ### 2-2. EDA (탐색적 데이터 분석) 시각화
+
 ```python
 import matplotlib.pyplot as plt
 plt.rcParams["font.family"] = "Malgun Gothic" # Windows 폰트 설정
@@ -92,12 +96,15 @@ plt.show()
 분석된 인사이트와 코드를 바탕으로 Markdown 문서를 작성하고, GitHub 블로그에 배포합니다.
 
 ### 3-1. 포스팅 Markdown 작성 (`pages/` 폴더)
+
 분석 과정, 코드 블록, 인사이트를 담아 `.md` 파일로 블로그 `pages/` 폴더 내에 저장합니다.
 
 ### 3-2. 블로그 메인 인덱스 등록 (`posts.json` 업데이트)
+
 블로그 메인 화면에 글이 노출되도록 메타데이터를 `posts.json` 최상단에 삽입합니다.
 
 ### 3-3. GitHub 배포 (Git 커밋 및 푸시)
+
 터미널(또는 CMD)을 열고 블로그 폴더로 이동한 뒤 변경사항을 Git에 반영합니다.
 
 ```bash
