@@ -1,6 +1,6 @@
 // n8n Webhook URL (이 값을 본인의 n8n 웹훅 주소로 변경하세요)
 // 예: "https://your-n8n-domain.com/webhook/portfolio-ai-agent"
-const N8N_WEBHOOK_URL = "https://my-n8n-server.com/webhook/portfolio-ai-agent";
+const N8N_WEBHOOK_URL = "https://su0901.app.n8n.cloud/webhook/chat";
 
 document.addEventListener("DOMContentLoaded", () => {
   // Inject Chatbot HTML
