@@ -31,9 +31,9 @@ document.addEventListener("DOMContentLoaded", () => {
     statusDiv.style.display = "none";
 
     try {
-      // Supabase 'inquiries' 테이블에 데이터 적재
+      // Supabase 'contacts' 테이블에 데이터 적재
       const { data, error } = await _supabase
-        .from("inquiries")
+        .from("contacts")
         .insert([{ name, email, message }]);
 
       if (error) throw error;
