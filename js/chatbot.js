@@ -88,10 +88,13 @@ document.addEventListener("DOMContentLoaded", () => {
             김수현 PM이 구축한 각종 실무 프로젝트 및 기술 역량에 대해 실시간 답변을 제공합니다!
           </p>
           <div class="stitch-card-mini">
-            <span class="mini-badge">Google Stitch Prototype</span>
+            <span class="mini-badge">Google Stitch Live</span>
             <h4>SH호텔 로봇 UI/UX 설계안</h4>
-            <p>구글 Stitch AI 협업 캔버스를 통해 구현한 차세대 스마트 호텔 관제 및 AI 가이드 서비스 프로토타입입니다.</p>
-            <a href="https://stitch.withgoogle.com/projects/1421755434155650679" target="_blank">디자인 원안 열기 ↗</a>
+            <p>구글 Stitch AI 캔버스로 기획하고 Vercel에 단독 정적 웹으로 배포한 스마트 호텔 서비스 프로토타입입니다.</p>
+            <div style="margin-top: 8px; display: flex; gap: 8px;">
+              <a href="https://next-extension-blond.vercel.app/index.html" target="_blank" style="font-weight: 800; color: #0366d6;">💻 PC 배포판 ↗</a>
+              <a href="https://stitch.withgoogle.com/preview/16393579884020231280?node-id=3c31bbbc06ec4d4e87c08691c1d39d48" target="_blank" style="font-weight: 800; color: #000;">📱 모바일 프리뷰 ↗</a>
+            </div>
           </div>
           <p style="margin-top: 12px; font-size: 0.8rem; font-weight: bold; opacity: 0.7;">💡 궁금하신 주제를 선택해 보세요:</p>
           <div class="suggestion-chips">
@@ -133,14 +136,17 @@ document.addEventListener("DOMContentLoaded", () => {
             <span class="mini-badge" style="background: #0366d6;">Google Stitch Live Integration</span>
             <h4 style="color: #0366d6;">SH호텔 차세대 로봇 자동화 서비스 UI/UX</h4>
             <p style="margin-bottom: 8px;">
-              김수현 PM이 <strong>구글 Stitch(Design with AI)</strong> 협업 캔버스를 기반으로 완성한 차세대 스마트 호텔 통합 관제 콘솔 및 로봇 에이전트 서비스 프로토타입 설계 사양입니다.
+              김수현 PM이 <strong>구글 Stitch(Design with AI)</strong> 협업 캔버스를 기반으로 완성하고 Vercel에 직접 배포한 차세대 스마트 호텔 통합 관제 및 로봇 가이드 UI 설계안입니다.
             </p>
-            <ul style="padding-left: 16px; margin-bottom: 10px; font-size: 0.8rem; color: #555; line-height: 1.45;">
+            <ul style="padding-left: 16px; margin-bottom: 12px; font-size: 0.8rem; color: #555; line-height: 1.45;">
               <li>F&B 발주 시스템 연동 API 통신 모듈 설계</li>
               <li>현장 직원용 대화 수신 팝업 및 고가청 경보 다이얼로그 기획</li>
               <li>Google AI Studio 연계 및 IDE MCP(Model Context Protocol) 지원</li>
             </ul>
-            <a href="https://stitch.withgoogle.com/projects/1421755434155650679" target="_blank" style="display: block; text-align: center; background: #000; color: #fff; padding: 8px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 0.8rem;">Stitch 디자인 원안 바로가기 ↗</a>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <a href="https://next-extension-blond.vercel.app/index.html" target="_blank" style="display: block; text-align: center; background: #0366d6; color: #fff; padding: 8px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 0.8rem;">💻 PC 대시보드 배포판 열기 ↗</a>
+              <a href="https://stitch.withgoogle.com/preview/16393579884020231280?node-id=3c31bbbc06ec4d4e87c08691c1d39d48" target="_blank" style="display: block; text-align: center; background: #000; color: #fff; padding: 8px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 0.8rem; border: 2px solid #000;">📱 모바일용 실시간 프리뷰 ↗</a>
+            </div>
           </div>
         `;
         removeLoading();
