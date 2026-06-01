@@ -79,14 +79,75 @@ document.addEventListener("DOMContentLoaded", () => {
   async function sendMessage(text, isHidden = false) {
     if (!text.trim()) return;
 
+    if (text === "init") {
+      // Render Premium custom Welcome Message
+      const welcomeHTML = `
+        <div class="welcome-box">
+          <p><strong>안녕하세요! 김수현 PM의 포트폴리오 AI 비서입니다. 🤖</strong></p>
+          <p style="margin-top: 5px; font-size: 0.85rem; opacity: 0.8; line-height: 1.4;">
+            김수현 PM이 구축한 각종 실무 프로젝트 및 기술 역량에 대해 실시간 답변을 제공합니다!
+          </p>
+          <div class="stitch-card-mini">
+            <span class="mini-badge">Google Stitch Prototype</span>
+            <h4>SH호텔 로봇 UI/UX 설계안</h4>
+            <p>구글 Stitch AI 협업 캔버스를 통해 구현한 차세대 스마트 호텔 관제 및 AI 가이드 서비스 프로토타입입니다.</p>
+            <a href="https://stitch.withgoogle.com/projects/1421755434155650679" target="_blank">디자인 원안 열기 ↗</a>
+          </div>
+          <p style="margin-top: 12px; font-size: 0.8rem; font-weight: bold; opacity: 0.7;">💡 궁금하신 주제를 선택해 보세요:</p>
+          <div class="suggestion-chips">
+            <button class="sug-chip" data-query="Stitch 프로젝트 설계안에 대해 설명해줘">🤖 Stitch 설계안</button>
+            <button class="sug-chip" data-query="김수현 PM의 주요 기술 스택과 경력은?">🛠️ 기술 스택/경력</button>
+            <button class="sug-chip" data-query="인스타그램 가짜 팔로워 분석 프로젝트">📊 인스타 가짜팔로워</button>
+          </div>
+        </div>
+      `;
+      appendMessage("bot", welcomeHTML);
+      
+      // Bind click events to dynamically generated suggestion chips
+      setTimeout(() => {
+        const chips = messagesContainer.querySelectorAll(".sug-chip");
+        chips.forEach(chip => {
+          chip.addEventListener("click", () => {
+            const query = chip.getAttribute("data-query");
+            sendMessage(query);
+          });
+        });
+      }, 100);
+      return;
+    }
+
     if (!isHidden) {
       appendMessage("user", text);
       inputField.value = "";
     }
 
+    // Check if query is about Stitch or design prototypes to give instant luxury custom card response
+    const isStitchQuery = /stitch|스티치|프로토타입|디자인|hotel|호텔/i.test(text);
+
     appendLoading();
 
     try {
+      if (isStitchQuery) {
+        const answer = `
+          <div class="stitch-card-mini" style="margin-top: 0; box-shadow: none; border-color: #0366d6;">
+            <span class="mini-badge" style="background: #0366d6;">Google Stitch Live Integration</span>
+            <h4 style="color: #0366d6;">SH호텔 차세대 로봇 자동화 서비스 UI/UX</h4>
+            <p style="margin-bottom: 8px;">
+              김수현 PM이 <strong>구글 Stitch(Design with AI)</strong> 협업 캔버스를 기반으로 완성한 차세대 스마트 호텔 통합 관제 콘솔 및 로봇 에이전트 서비스 프로토타입 설계 사양입니다.
+            </p>
+            <ul style="padding-left: 16px; margin-bottom: 10px; font-size: 0.8rem; color: #555; line-height: 1.45;">
+              <li>F&B 발주 시스템 연동 API 통신 모듈 설계</li>
+              <li>현장 직원용 대화 수신 팝업 및 고가청 경보 다이얼로그 기획</li>
+              <li>Google AI Studio 연계 및 IDE MCP(Model Context Protocol) 지원</li>
+            </ul>
+            <a href="https://stitch.withgoogle.com/projects/1421755434155650679" target="_blank" style="display: block; text-align: center; background: #000; color: #fff; padding: 8px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 0.8rem;">Stitch 디자인 원안 바로가기 ↗</a>
+          </div>
+        `;
+        removeLoading();
+        appendMessage("bot", answer);
+        return;
+      }
+
       const response = await fetch(N8N_WEBHOOK_URL, {
         method: "POST",
         headers: {
@@ -108,14 +169,14 @@ document.addEventListener("DOMContentLoaded", () => {
       const data = await response.json();
 
       // n8n returns { output: "answer" } based on the Webhook response node configuration
-      const answer = data.output || "답변을 가져오지 못했습니다.";
+      const answer = data.output || "답변을 받지 못했습니다.";
       appendMessage("bot", answer);
     } catch (error) {
       console.error("Error:", error);
       removeLoading();
       appendMessage(
         "bot",
-        "오류가 발생했습니다. 나중에 다시 시도해주세요.<br>(n8n 웹훅 주소가 올바른지 확인해주세요.)",
+        "서버와의 통신 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.<br>(n8n 웹훅 상태를 확인하세요.)",
       );
     }
   }

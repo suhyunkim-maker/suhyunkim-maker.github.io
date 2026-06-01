@@ -146,3 +146,83 @@
 #chatbot-send:hover {
   opacity: 0.6;
 }
+
+/* Chatbot Suggestion Chips & Custom Stitch Welcomes */
+.suggestion-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.sug-chip {
+  background: #ffffff;
+  color: #000000;
+  border: 2px solid #000000;
+  border-radius: 20px;
+  padding: 5px 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 0px #000;
+  transition: all 0.15s ease;
+}
+
+.sug-chip:hover {
+  transform: translate(-1px, -2px);
+  box-shadow: 0 4px 0px #000;
+  background: #f6f8fa;
+}
+
+.sug-chip:active {
+  transform: translate(0, 0);
+  box-shadow: 0 0px 0px #000;
+}
+
+.stitch-card-mini {
+  margin-top: 10px;
+  padding: 12px;
+  background: #ffffff;
+  border: 2px solid #000;
+  border-radius: 8px;
+  box-shadow: 0 3px 0px #000;
+  font-size: 0.85rem;
+}
+
+.stitch-card-mini .mini-badge {
+  display: inline-block;
+  font-size: 0.6rem;
+  font-weight: 800;
+  background: #000;
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.stitch-card-mini h4 {
+  margin: 4px 0;
+  font-size: 0.9rem;
+  color: #0366d6;
+}
+
+.stitch-card-mini p {
+  font-size: 0.8rem;
+  color: #555;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+
+.stitch-card-mini a {
+  display: inline-block;
+  font-weight: 800;
+  color: #000;
+  text-decoration: underline;
+}
+
+.welcome-box {
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
