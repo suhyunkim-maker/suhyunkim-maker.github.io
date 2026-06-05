@@ -1,9 +1,9 @@
 ---
-title: '공공데이터포털 API로 다중 페이지 데이터 수집 및 가공하기'
+title: "공공데이터포털 API로 다중 페이지 데이터 수집 및 가공하기"
 date: 2026-04-13
-tags: ['Python', 'Requests', 'Pandas', 'API']
-category: 'Projects'
-description: 'odcloud.kr 공공데이터 API를 활용해 여러 페이지의 데이터를 한 번에 가져오고 Pandas로 가공하는 방법'
+tags: ["Python", "Requests", "Pandas", "API"]
+category: "Projects"
+description: "odcloud.kr 공공데이터 API를 활용해 여러 페이지의 데이터를 한 번에 가져오고 Pandas로 가공하는 방법"
 ---
 
 ![API Data Crawling Cover](../images/cover_api.png)
@@ -41,14 +41,14 @@ for page in range(1, 6):
     }
 
     res = requests.get(base_url, params=params, timeout=10)
-    
+
     # 에러 방지 체킹
     if res.status_code != 200:
         print("HTTP 오류 발생")
         break
 
     data = res.json()
-    
+
     if "data" in data:
         items = data["data"]
         all_items.extend(items)
@@ -77,7 +77,8 @@ df_pivot = df.pivot_table(
 display(df_pivot)
 ```
 
-이렇게 하면 여러 페이지에 흩어져 있던 방대한 데이터를 한 번에 수집하고, 한눈에 보기 쉬운 구조로 깔끔하게 정리할 수 있습니다. 
+이렇게 하면 여러 페이지에 흩어져 있던 방대한 데이터를 한 번에 수집하고, 한눈에 보기 쉬운 구조로 깔끔하게 정리할 수 있습니다.
 
 ---
+
 **💡 팁:** URL과 Service Key를 바꿔서 다른 odcloud API에도 똑같은 방식을 적용할 수 있습니다.

@@ -1,88 +1,128 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>hello su-hyun kim</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <header>
-    <div class="header-content">
-      <h1><a href="index.html">hello su-hyun kim</a></h1>
-      <nav>
-        <button id="theme-toggle">🌓</button>
-      </nav>
-    </div>
-  </header>
-  
-  <main>
-    <section class="portfolio-section">
-      <h2 style="margin-bottom: 1rem;">🚀 주요 프로젝트</h2>
-      <div class="project-grid">
-        <a href="post.html?file=openapi-data-parsing.md" class="project-card">
-          <h3>Open API JSON 데이터를 Pandas DataFrame으로 변환</h3>
-          <p class="project-desc">경기데이터드림 Open API를 활용하여 데이터를 수집하고 분석 가능한 형태로 변환하는 실습입니다.</p>
-          <div class="project-tags">
-            <span class="tag">Python</span>
-            <span class="tag">Pandas</span>
-            <span class="tag">API</span>
-          </div>
-        </a>
-        <a href="post.html?file=instagram-analysis.md" class="project-card">
-          <h3>메인 인스타그램 인플로언서에 대한 방법 데이터 분석</h3>
-          <p class="project-desc">데이터 추천 및 구글 코렙 코딩을 통한 인스타그램 인플루언서 데이터 분석 프로젝트입니다. (링크 단축)</p>
-          <div class="project-tags">
-            <span class="tag">pandas</span>
-            <span class="tag">구글 코렙</span>
-            <span class="tag">데이터 추천</span>
-            <span class="tag">코딩</span>
-          </div>
-        </a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hello su-hyun kim</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/chatbot.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-content">
+        <h1><a href="index.html">hello su-hyun kim</a></h1>
+        <nav>
+          <button id="theme-toggle">🌓</button>
+        </nav>
       </div>
-    </section>
+    </header>
 
-    <hr style="margin: 2rem 0; border: none; border-top: 1px solid var(--border-color);">
+    <main>
+      <section class="portfolio-section">
+        <h2 style="margin-bottom: 1rem">🚀 주요 프로젝트</h2>
+        <div class="project-grid">
+          <a href="post.html?file=openapi-data-parsing.md" class="project-card">
+            <h3>Open API JSON 데이터를 Pandas DataFrame으로 변환</h3>
+            <p class="project-desc">
+              공공데이터포털 Open API를 활용하여 데이터를 수집하고 분석 및
+              시각화 포맷으로 변환하는 실습입니다.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Pandas</span>
+              <span class="tag">API</span>
+            </div>
+          </a>
+          <a href="post.html?file=instagram-analysis.md" class="project-card">
+            <h3>일부 인스타 인플루언서의 가짜 팔로워 분석</h3>
+            <p class="project-desc">
+              공개된 인플루언서 팔로워 데이터를 활용해 가짜 계정 여부를 판별하고
+              분석한 프로젝트입니다. (크롤링 및 데이터 분석)
+            </p>
+            <div class="project-tags">
+              <span class="tag">pandas</span>
+              <span class="tag">데이터 분석</span>
+              <span class="tag">시각화</span>
+              <span class="tag">크롤링</span>
+            </div>
+          </a>
+          <div class="project-card stitch-project-card">
+            <div class="project-badge">Google Stitch Live</div>
+            <h3>SH호텔 로봇 자동화 서비스 차세대 UI/UX 설계안</h3>
+            <p class="project-desc">
+              구글 Stitch AI 디자인 캔버스로 기획하고 Vercel에 단독 정적 웹으로 배포한 차세대 스마트 호텔 통합 관제 및 로봇 서비스 프리미엄 UI/UX 사양서입니다.
+            </p>
+            <div class="project-links" style="margin-top: 1rem; display: flex; flex-direction: column; gap: 8px; margin-bottom: 1.2rem;">
+              <a href="https://next-extension-blond.vercel.app/index.html" target="_blank" style="display: block; text-align: center; background: #0366d6; color: #fff; padding: 8px 12px; border-radius: 6px; font-weight: bold; font-size: 0.85rem; text-decoration: none; transition: background 0.2s;">💻 PC 대시보드 배포 서비스 ↗</a>
+              <a href="https://stitch.withgoogle.com/preview/16393579884020231280?node-id=3c31bbbc06ec4d4e87c08691c1d39d48" target="_blank" style="display: block; text-align: center; background: #000; color: #fff; padding: 8px 12px; border-radius: 6px; font-weight: bold; font-size: 0.85rem; text-decoration: none; border: 2px solid #000; transition: background 0.2s;">📱 모바일용 실시간 프리뷰 ↗</a>
+            </div>
+            <div class="project-tags">
+              <span class="tag">AI Prototyping</span>
+              <span class="tag">UI/UX Design</span>
+              <span class="tag">Vercel Deploy</span>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    <div class="search-container">
-      <input type="text" id="search-input" placeholder="검색어를 입력하세요...">
-    </div>
-    
-    <div class="tag-filter-container">
-      <ul id="tag-filters"></ul>
-    </div>
+      <hr
+        style="
+          margin: 2rem 0;
+          border: none;
+          border-top: 1px solid var(--border-color);
+        "
+      />
 
-    <section id="post-list" class="post-list">
-      <!-- 게시글 목록이 여기에 동적으로 렌더링됩니다 -->
-    </section>
-  </main>
+      <div class="search-container">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="검색어를 입력하세요..."
+        />
+      </div>
 
-  <footer>
-    <p>&copy; 2025 My Blog. Powered by GitHub Pages.</p>
-  </footer>
+      <div class="tag-filter-container">
+        <ul id="tag-filters"></ul>
+      </div>
 
-  <script src="js/theme.js"></script>
-  <script src="js/search.js"></script>
-  <script src="js/app.js"></script>
+      <section id="post-list" class="post-list">
+        <!-- 게시글 목록이 여기에 동적으로 렌더링됩니다 -->
+      </section>
 
-  <!-- ===== 포트폴리오 AI 챗봇 ===== -->
-  <script>
-    window.ChatWidgetConfig = {
-      webhook: {
-        url: 'https://su0901.app.n8n.cloud/webhook/chat'
-      },
-      branding: {
-        name: 'Portfolio AI',
-        welcomeText: '안녕하세요! 저에 대해 궁금한 점을 물어보세요 😊',
-        responseTimeText: '잠시 후 답변드릴게요'
-      },
-      style: {
-        primaryColor: '#5c6bc0',
-        position: 'right'
-      }
-    };
-  </script>
-  <script src="https://cdn.jsdelivr.net/gh/juansebsol/n8n-chatbot-template@latest/chat-widget.js"></script>
+      <!-- 문의사항 섹션 추가 -->
+      <section class="contact-section">
+        <h2>✉️ 문의하기</h2>
+        <div class="contact-card">
+          <form id="contact-form">
+            <div class="form-group">
+              <label for="user-name">이름</label>
+              <input type="text" id="user-name" placeholder="이름을 입력해 주세요" required />
+            </div>
+            <div class="form-group">
+              <label for="user-email">이메일</label>
+              <input type="email" id="user-email" placeholder="이메일을 입력해 주세요" required />
+            </div>
+            <div class="form-group">
+              <label for="user-message">문의 내용</label>
+              <textarea id="user-message" placeholder="문의 내용을 입력해 주세요" required></textarea>
+            </div>
+            <button type="submit" id="submit-btn">보내기 ⚡</button>
+          </form>
+          <div id="form-status" style="margin-top: 1rem; display: none; padding: 0.8rem; border-radius: 6px; font-size: 0.9rem; font-weight: 500;"></div>
+        </div>
+      </section>
+    </main>
 
-</body>
+    <footer>
+      <p>&copy; 2025 My Blog. Powered by GitHub Pages.</p>
+    </footer>
+
+    <script src="js/theme.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/chatbot.js"></script>
+    <!-- Supabase CDN 및 연동 스크립트 -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/contact.js"></script>
+  </body>
 </html>

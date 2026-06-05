@@ -81,7 +81,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: 'pages'
+  group: "pages"
   cancel-in-progress: false
 
 jobs:
@@ -97,7 +97,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: "18"
 
       - name: Generate posts.json
         run: node .github/scripts/generate-posts.js
@@ -108,7 +108,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'
+          path: "."
 
       - name: Deploy to GitHub Pages
         id: deployment
@@ -118,34 +118,36 @@ jobs:
 #### `.github/scripts/generate-posts.js`
 
 ````javascript
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 
-const postsDir = 'pages';
-const outputFile = 'posts.json';
+const postsDir = "pages";
+const outputFile = "posts.json";
 
 if (!fs.existsSync(postsDir)) {
-  console.log('pages 디렉토리가 없습니다. 빈 posts.json을 생성합니다.');
+  console.log("pages 디렉토리가 없습니다. 빈 posts.json을 생성합니다.");
   fs.writeFileSync(outputFile, JSON.stringify([], null, 2));
   process.exit(0);
 }
 
 const files = fs
   .readdirSync(postsDir)
-  .filter((file) => file.endsWith('.md'))
+  .filter((file) => file.endsWith(".md"))
   .sort((a, b) => b.localeCompare(a));
 
 const posts = files.map((filename) => {
   const filePath = path.join(postsDir, filename);
-  let content = fs.readFileSync(filePath, 'utf8');
+  let content = fs.readFileSync(filePath, "utf8");
 
   // UTF-8 BOM 제거 (Windows 호환)
-  if (content.charCodeAt(0) === 0xFEFF) {
+  if (content.charCodeAt(0) === 0xfeff) {
     content = content.slice(1);
   }
 
   // Front Matter 파싱 (Windows 줄바꿈 지원)
-  const frontMatterMatch = content.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/);
+  const frontMatterMatch = content.match(
+    /^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/,
+  );
   let metadata = {};
   let postContent = content;
 
@@ -156,7 +158,7 @@ const posts = files.map((filename) => {
     // Front Matter 라인 파싱 (Windows 줄바꿈 지원)
     const lines = frontMatter.split(/\r?\n/);
     lines.forEach((line) => {
-      const colonIndex = line.indexOf(':');
+      const colonIndex = line.indexOf(":");
       if (colonIndex > 0) {
         const key = line.substring(0, colonIndex).trim();
         let value = line.substring(colonIndex + 1).trim();
@@ -170,14 +172,14 @@ const posts = files.map((filename) => {
         }
 
         // 배열 파싱 (tags)
-        if (key === 'tags' && value.startsWith('[') && value.endsWith(']')) {
+        if (key === "tags" && value.startsWith("[") && value.endsWith("]")) {
           try {
             value = JSON.parse(value);
           } catch {
             value = value
               .slice(1, -1)
-              .split(',')
-              .map((tag) => tag.trim().replace(/^['"]|['"]$/g, ''));
+              .split(",")
+              .map((tag) => tag.trim().replace(/^['"]|['"]$/g, ""));
           }
         }
 
@@ -188,24 +190,24 @@ const posts = files.map((filename) => {
 
   // 발췌문 생성 (첫 200자)
   const excerpt = postContent
-    .replace(/#.*$/gm, '') // 헤더 제거
-    .replace(/```[\s\S]*?```/g, '') // 코드 블록 제거
-    .replace(/\[[\s\S]*?\]/g, '') // 링크 제거
-    .replace(/\*\*.*\*\*/g, '') // 볼드 제거
-    .replace(/\*.*\*/g, '') // 이탤릭 제거
-    .replace(/[\r\n]+/g, ' ') // 줄바꿈을 공백으로 (Windows 지원)
+    .replace(/#.*$/gm, "") // 헤더 제거
+    .replace(/```[\s\S]*?```/g, "") // 코드 블록 제거
+    .replace(/\[[\s\S]*?\]/g, "") // 링크 제거
+    .replace(/\*\*.*\*\*/g, "") // 볼드 제거
+    .replace(/\*.*\*/g, "") // 이탤릭 제거
+    .replace(/[\r\n]+/g, " ") // 줄바꿈을 공백으로 (Windows 지원)
     .trim()
     .substring(0, 200)
     .trim();
 
   return {
     file: filename,
-    title: metadata.title || filename.replace('.md', ''),
-    date: metadata.date || new Date().toISOString().split('T')[0],
+    title: metadata.title || filename.replace(".md", ""),
+    date: metadata.date || new Date().toISOString().split("T")[0],
     tags: Array.isArray(metadata.tags) ? metadata.tags : [],
-    category: metadata.category || '',
-    description: metadata.description || '',
-    excerpt: excerpt + (excerpt.length === 200 ? '...' : ''),
+    category: metadata.category || "",
+    description: metadata.description || "",
+    excerpt: excerpt + (excerpt.length === 200 ? "..." : ""),
   };
 });
 
@@ -227,11 +229,11 @@ console.log(`Generated posts.json with ${posts.length} posts`);
 
 ```markdown
 ---
-title: '첫 번째 게시글'
+title: "첫 번째 게시글"
 date: 2025-01-26
-tags: ['JavaScript', 'Web']
-category: 'Development'
-description: '게시글 설명'
+tags: ["JavaScript", "Web"]
+category: "Development"
+description: "게시글 설명"
 ---
 
 # 제목
@@ -255,6 +257,7 @@ description: '게시글 설명'
 **Windows에서 파일 저장 시 UTF-8 BOM(Byte Order Mark)이 자동으로 추가될 수 있습니다.**
 
 **문제점**:
+
 - Windows 메모장이나 일부 에디터는 기본적으로 UTF-8 BOM(`\uFEFF`)으로 저장
 - BOM이 있으면 Front Matter 정규식 `^---`가 매칭 실패
 - 결과: 메타데이터 파싱 실패 → 게시글 제목, 태그 등이 표시되지 않음
@@ -263,12 +266,13 @@ description: '게시글 설명'
 
 ```javascript
 // UTF-8 BOM 제거 (Windows 호환)
-if (content.charCodeAt(0) === 0xFEFF) {
+if (content.charCodeAt(0) === 0xfeff) {
   content = content.slice(1);
 }
 ```
 
 **권장 에디터 설정**:
+
 - VS Code / Cursor: 파일 저장 시 "UTF-8" 선택 (BOM 없음)
 - 우측 하단 인코딩 클릭 → "Save with Encoding" → "UTF-8" 선택
 
@@ -315,29 +319,33 @@ git push origin main
 **여러 JS 파일에서 같은 이름의 전역 변수를 선언하면 에러가 발생합니다.**
 
 **문제 예시**:
+
 ```javascript
 // search.js
-let allPosts = [];  // ❌ 충돌!
+let allPosts = []; // ❌ 충돌!
 
 // app.js
-let allPosts = [];  // ❌ 충돌!
+let allPosts = []; // ❌ 충돌!
 ```
 
 **에러 메시지**:
+
 ```
 Uncaught SyntaxError: Identifier 'allPosts' has already been declared
 ```
 
 **해결책**: 각 파일에서 고유한 변수명 사용
+
 ```javascript
 // search.js
-let searchPosts = [];  // ✅ 고유한 이름
+let searchPosts = []; // ✅ 고유한 이름
 
 // app.js
-let allPosts = [];     // ✅ 고유한 이름
+let allPosts = []; // ✅ 고유한 이름
 ```
 
 **권장 사항**:
+
 - 각 모듈에서 사용하는 변수는 해당 모듈을 나타내는 접두사 사용
 - 또는 ES6 모듈 시스템 (`import`/`export`) 사용 고려
 
@@ -395,13 +403,13 @@ git push origin main
 
 ```javascript
 script.setAttribute(
-  'data-repo',
-  '{your_github_username}/{your_github_username}.github.io',
+  "data-repo",
+  "{your_github_username}/{your_github_username}.github.io",
 );
-script.setAttribute('data-repo-id', 'YOUR_REPO_ID'); // 3단계에서 복사
-script.setAttribute('data-category', 'General');
-script.setAttribute('data-category-id', 'YOUR_CATEGORY_ID'); // 3단계에서 복사
-script.setAttribute('data-emit-metadata', '1'); // 실시간 업데이트를 위해 반드시 1로 설정
+script.setAttribute("data-repo-id", "YOUR_REPO_ID"); // 3단계에서 복사
+script.setAttribute("data-category", "General");
+script.setAttribute("data-category-id", "YOUR_CATEGORY_ID"); // 3단계에서 복사
+script.setAttribute("data-emit-metadata", "1"); // 실시간 업데이트를 위해 반드시 1로 설정
 ```
 
 ### 5단계: 변경사항 커밋 & 푸시

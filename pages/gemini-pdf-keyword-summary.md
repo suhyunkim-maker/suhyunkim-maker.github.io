@@ -55,7 +55,7 @@ def summarize_keywords_with_gemini(text):
     """Gemini API를 호출하여 큰 글자 제목 형태의 키워드 20개를 추출하는 함수"""
     # 가성비와 속도가 뛰어난 1.5-flash 모델 채택
     model = genai.GenerativeModel('gemini-1.5-flash')
-    
+
     # 프롬프트 설계 (앱 서비스 배포를 위한 명확한 규칙 지정)
     prompt = f"""
     아래 제공된 텍스트를 정밀 분석해서 다음 조건에 맞게 요약본을 반환해줘:
@@ -66,24 +66,24 @@ def summarize_keywords_with_gemini(text):
     [분석할 텍스트]
     {text[:10000]}  # 안전한 API Token 관리를 위해 앞부분 1만 자 커트
     """
-    
+
     response = model.generate_content(prompt)
     return response.text
 
 # 메인 실행 프로세스
 if __name__ == "__main__":
     pdf_file_path = "sample_document.pdf"  # 분석할 PDF 파일명
-    
+
     try:
         print("[진행] 1단계: PDF 텍스트 추출을 시작합니다...")
         raw_text = extract_text_from_pdf(pdf_file_path)
-        
+
         print("[진행] 2단계: Google Gemini AI 분석 요청 중...")
         result_summary = summarize_keywords_with_gemini(raw_text)
-        
+
         print("\n✨ [완료] UI 렌더링용 키워드 20선 ✨\n")
         print(result_summary)
-        
+
     except Exception as e:
         print(f"❌ 에러가 발생했습니다: {e}")
 ```
@@ -92,7 +92,7 @@ if __name__ == "__main__":
 
 ## 💡 구현 팁 (Tips)
 
-* **글자 수 제어**: 코드 내 `text[:10000]` 부분은 필요에 따라 조절할 수 있습니다. `gemini-1.5-flash` 모델은 최대 100만 토큰까지 수용하므로 매우 긴 논문도 통째로 넣는 것이 가능합니다.
-* **배포 환경 보안**: 블로그 코드에 예시로 적힌 `"YOUR_GEMINI_API_KEY"`는 실제 운영 환경이나 깃허브(GitHub)에 올릴 때 반드시 `.env` 파일(환경 변수)로 관리해야 안전합니다.
+- **글자 수 제어**: 코드 내 `text[:10000]` 부분은 필요에 따라 조절할 수 있습니다. `gemini-1.5-flash` 모델은 최대 100만 토큰까지 수용하므로 매우 긴 논문도 통째로 넣는 것이 가능합니다.
+- **배포 환경 보안**: 블로그 코드에 예시로 적힌 `"YOUR_GEMINI_API_KEY"`는 실제 운영 환경이나 깃허브(GitHub)에 올릴 때 반드시 `.env` 파일(환경 변수)로 관리해야 안전합니다.
 
 이번 포스팅이 AI 모델을 활용한 자동화 파이프라인 구축에 도움이 되셨길 바랍니다!

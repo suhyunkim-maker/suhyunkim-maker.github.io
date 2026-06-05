@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hello su-hyun kim</title>
+  <link rel="stylesheet" href="./hello su-hyun kim_files/style.css">
+<link rel="stylesheet" href="./hello su-hyun kim_files/style(1).css"><style>
+        .n8n-chat-widget {
+            --chat--color-primary: var(--n8n-chat-primary-color, #854fff);
+            --chat--color-secondary: var(--n8n-chat-secondary-color, #6b3fd4);
+            --chat--color-background: var(--n8n-chat-background-color, #ffffff);
+            --chat--color-font: var(--n8n-chat-font-color, #333333);
+            font-family: 'Geist Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .n8n-chat-widget .chat-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: none;
+            width: 380px;
+            height: 600px;
+            background: var(--chat--color-background);
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(133, 79, 255, 0.15);
+            border: 1px solid rgba(133, 79, 255, 0.2);
+            overflow: hidden;
+            font-family: inherit;
+        }
+
+        .n8n-chat-widget .chat-container.position-left {
+            right: auto;
+            left: 20px;
+        }
+
+        .n8n-chat-widget .chat-container.open {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .n8n-chat-widget .brand-header {
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid rgba(133, 79, 255, 0.1);
+            position: relative;
+        }
+
+        .n8n-chat-widget .close-button {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--chat--color-font);
+            cursor: pointer;
+            padding: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.2s;
+            font-size: 20px;
+            opacity: 0.6;
+        }
+
+        .n8n-chat-widget .close-button:hover {
+            opacity: 1;
+        }
+
+        .n8n-chat-widget .brand-header img {
+            width: 32px;
+            height: 32px;
+        }
+
+        .n8n-chat-widget .brand-header span {
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--chat--color-font);
+        }
+
+        .n8n-chat-widget .new-conversation {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .n8n-chat-widget .welcome-text {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--chat--color-font);
+            margin-bottom: 24px;
+            line-height: 1.3;
+        }
+
+        .n8n-chat-widget .new-chat-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 16px 24px;
+            background: linear-gradient(135deg, var(--chat--color-primary) 0%, var(--chat--color-secondary) 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: transform 0.3s;
+            font-weight: 500;
+            font-family: inherit;
+            margin-bottom: 12px;
+        }
+
+        .n8n-chat-widget .new-chat-btn:hover {
+            transform: scale(1.02);
+        }
+
+        .n8n-chat-widget .message-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        .n8n-chat-widget .response-text {
+            font-size: 14px;
+            color: var(--chat--color-font);
+            opacity: 0.7;
+            margin: 0;
+        }
+
+        .n8n-chat-widget .chat-interface {
+            display: none;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .n8n-chat-widget .chat-interface.active {
+            display: flex;
+        }
+
+        .n8n-chat-widget .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            background: var(--chat--color-background);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .n8n-chat-widget .chat-message {
+            padding: 12px 16px;
+            margin: 8px 0;
+            border-radius: 12px;
+            max-width: 80%;
+            word-wrap: break-word;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .n8n-chat-widget .chat-message.user {
+            background: linear-gradient(135deg, var(--chat--color-primary) 0%, var(--chat--color-secondary) 100%);
+            color: white;
+            align-self: flex-end;
+            box-shadow: 0 4px 12px rgba(133, 79, 255, 0.2);
+            border: none;
+        }
+
+        .n8n-chat-widget .chat-message.bot {
+            background: var(--chat--color-background);
+            border: 1px solid rgba(133, 79, 255, 0.2);
+            color: var(--chat--color-font);
+            align-self: flex-start;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .n8n-chat-widget .chat-input {
+            padding: 16px;
+            background: var(--chat--color-background);
+            border-top: 1px solid rgba(133, 79, 255, 0.1);
+            display: flex;
+            gap: 8px;
+        }
+
+        .n8n-chat-widget .chat-input textarea {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid rgba(133, 79, 255, 0.2);
+            border-radius: 8px;
+            background: var(--chat--color-background);
+            color: var(--chat--color-font);
+            resize: none;
+            font-family: inherit;
+            font-size: 14px;
+        }
+
+        .n8n-chat-widget .chat-input textarea::placeholder {
+            color: var(--chat--color-font);
+            opacity: 0.6;
+        }
+
+        .n8n-chat-widget .chat-input button {
+            background: linear-gradient(135deg, var(--chat--color-primary) 0%, var(--chat--color-secondary) 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 0 20px;
+            cursor: pointer;
+            transition: transform 0.2s;
+            font-family: inherit;
+            font-weight: 500;
+        }
+
+        .n8n-chat-widget .chat-input button:hover {
+            transform: scale(1.05);
+        }
+
+        .n8n-chat-widget .chat-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            border-radius: 30px;
+            background: linear-gradient(135deg, var(--chat--color-primary) 0%, var(--chat--color-secondary) 100%);
+            color: white;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(133, 79, 255, 0.3);
+            z-index: 999;
+            transition: transform 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .n8n-chat-widget .chat-toggle.position-left {
+            right: auto;
+            left: 20px;
+        }
+
+        .n8n-chat-widget .chat-toggle:hover {
+            transform: scale(1.05);
+        }
+
+        .n8n-chat-widget .chat-toggle svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        .n8n-chat-widget .chat-footer {
+            padding: 8px;
+            text-align: center;
+            background: var(--chat--color-background);
+            border-top: 1px solid rgba(133, 79, 255, 0.1);
+        }
+
+        .n8n-chat-widget .chat-footer a {
+            color: var(--chat--color-primary);
+            text-decoration: none;
+            font-size: 12px;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+            font-family: inherit;
+        }
+
+        .n8n-chat-widget .chat-footer a:hover {
+            opacity: 1;
+        }
+    </style></head>
+<body>
+  <header>
+    <div class="header-content">
+      <h1><a href="https://suhyunkim-maker.github.io/index.html">hello su-hyun kim</a></h1>
+      <nav>
+        <button id="theme-toggle">🌓</button>
+      </nav>
+    </div>
+  </header>
+  
+  <main>
+    <section class="portfolio-section">
+      <h2 style="margin-bottom: 1rem;">🚀 주요 프로젝트</h2>
+      <div class="project-grid">
+        <a href="https://suhyunkim-maker.github.io/post.html?file=openapi-data-parsing.md" class="project-card">
+          <h3>Open API JSON 데이터를 Pandas DataFrame으로 변환</h3>
+          <p class="project-desc">경기데이터드림 Open API를 활용하여 데이터를 수집하고 분석 가능한 형태로 변환하는 실습입니다.</p>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">Pandas</span>
+            <span class="tag">API</span>
+          </div>
+        </a>
+        <a href="https://suhyunkim-maker.github.io/post.html?file=instagram-analysis.md" class="project-card">
+          <h3>메인 인스타그램 인플로언서에 대한 방법 데이터 분석</h3>
+          <p class="project-desc">데이터 추천 및 구글 코렙 코딩을 통한 인스타그램 인플루언서 데이터 분석 프로젝트입니다. (링크 단축)</p>
+          <div class="project-tags">
+            <span class="tag">pandas</span>
+            <span class="tag">구글 코렙</span>
+            <span class="tag">데이터 추천</span>
+            <span class="tag">코딩</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <hr style="margin: 2rem 0; border: none; border-top: 1px solid var(--border-color);">
+
+    <div class="search-container">
+      <input type="text" id="search-input" placeholder="검색어를 입력하세요...">
+    </div>
+    
+    <div class="tag-filter-container">
+      <ul id="tag-filters"><li class="active">All</li><li>Python</li><li>Gemini API</li><li>AI</li><li>PDF</li><li>PyMuPDF</li><li>Playwright</li><li>Automation</li><li>Bot</li><li>Data Analysis</li><li>EDA</li><li>Open API</li><li>Mermaid</li><li>Visualization</li><li>API</li><li>Pandas</li><li>Requests</li><li>Google Colab</li><li>JavaScript</li><li>Web</li></ul>
+    </div>
+
+    <section id="post-list" class="post-list"><article class="post-item">
+      <h2><a href="https://suhyunkim-maker.github.io/post.html?file=gemini-pdf-keyword-summary.md">Google AI Studio(Gemini API)로 PDF 파일 핵심 키워드 요약 기능 구현하기</a></h2>
+      <div class="post-meta">2026-05-19 | Projects</div>
+      <div class="post-excerpt">Google AI Studio의 Gemini API와 파이썬 PyMuPDF 라이브러리를 활용하여 PDF 파일 텍스트를 자동으로 분석하고 가장 중요한 키워드 20개를 추출하는 앱 서비스 백엔드 코드를 소개합니다.</div>
+      <div class="post-tags"><span>#Python</span><span>#Gemini API</span><span>#AI</span><span>#PDF</span><span>#PyMuPDF</span></div>
+    </article><article class="post-item">
+      <h2><a href="https://suhyunkim-maker.github.io/post.html?file=bunjang-price-alert-bot.md">Playwright MCP 크롤링부터 최저가 알림 봇 만들기 (카드뉴스 포함)</a></h2>
+      <div class="post-meta">2026-05-19 | Projects</div>
+      <div class="post-excerpt">번개장터 물티슈 상품 데이터를 자동으로 스크래핑한 경험과, 수집한 데이터를 바탕으로 예산 이하의 '꿀매' 상품이 올라왔을 때 알려주는 최저가 알림 봇 파이썬 코드를 작성해 보았습니다.</div>
+      <div class="post-tags"><span>#Python</span><span>#Playwright</span><span>#Automation</span><span>#Bot</span></div>
+    </article><article class="post-item">
+      <h2><a href="https://suhyunkim-maker.github.io/post.html?file=gg-career-data-visualization.md">경기데이터드림: 경력단절 여성 취업지원 교육과정 데이터 분석 시각화</a></h2>
+      <div class="post-meta">2026-05-19 | Projects</div>
+      <div class="post-excerpt">이번 포스팅에서는 경기데이터드림 데이터를 바탕으로 도출된 핵심 집계 결과를 Mermaid 차트로 시각화하여 직종별 교육 인사이트를 확인해 봅니다.</div>
+      <div class="post-tags"><span>#Data Analysis</span><span>#EDA</span><span>#Open API</span><span>#Mermaid</span><span>#Visualization</span></div>
+    </article><article class="post-item">
+      <h2><a href="https://suhyunkim-maker.github.io/post.html?file=public-data-workflow-guide.md">공공데이터 분석 및 블로그 자동 배포 워크플로우</a></h2>
+      <div class="post-meta">2026-05-19 | Projects</div>
+      <div class="post-excerpt">본 포스팅에서는 공공데이터 Open API를 수집, pandas로 분석한 뒤, GitHub 블로그에 자동으로 포스팅을 발행하는 과정을 안내합니다.</div>
+      <div class="post-tags"><span>#Python</span><span>#Automation</span><span>#API</span><span>#Data Analysis</span></div>
+    </article><article class="post-item">
+      <h2><a href="https://suhyunkim-maker.github.io/post.html?file=national-festival-openapi-eda.md">전국문화축제표준데이터 OpenAPI로 지역별 문화축제 현황 분석하기</a></h2>
+      <div class="post-meta">2026-05-19 | Projects</div>
+      <div class="post-excerpt">이번 포스팅에서는 공공데이터포털에서 제공하는 전국문화축제표준데이터 Open API를 활용하여 데이터를 수집하고 분석하는 전체 과정을 정리해 봅니다. 단순히 API를 호출하는 것을 넘어, 응답받은 JSON 데이터를 pandas DataFrame으로 변환하고, 데이터 전처리 후 시각화(EDA)까지 진행하여 인사이트를 도출하는 것이 핵심입니다.</div>
+      <div class="post-tags"><span>#Python</span><span>#Pandas</span><span>#API</span><span>#Data Analysis</span><span>#EDA</span></div>
+    </article><article class="post-item">
+      <h2><a href="https://suhyunkim-maker.github.io/post.html?file=openapi-data-parsing.md">Open API JSON 데이터를 Pandas DataFrame으로 변환하기</a></h2>
+      <div class="post-meta">2026-05-18 | Projects</div>
+      <div class="post-excerpt">이번 실습에서는 경기데이터드림 Open API를 활용하여 공공데이터 JSON 응답을 성공적으로 수집하고, 이를 데이터 분석에 적합한 pandas DataFrame 구조로 변환하는 방법을 다룹니다.</div>
+      <div class="post-tags"><span>#Python</span><span>#Pandas</span><span>#API</span><span>#Data Analysis</span></div>
+    </article><article class="post-item">
+      <h2><a href="https://suhyunkim-maker.github.io/post.html?file=saramin-market-analysis-2026.md">saramin-market-analysis-2026</a></h2>
+      <div class="post-meta">2026-05-15 </div>
+      <div class="post-excerpt">최근 크롤링 기술을 활용하여 에서 "데이터 분석가" 관련 채용 공고 120여 건을 수집하고 분석했습니다. 이번 분석을 통해 2026년 현재 데이터 분석 직군의 요구 사항과 시장 트렌드를 살펴보았습니다. --- - : 2026년 05월 14일 - : 사람인 채용 공고 (회사명, 직무 타이틀, 지역, 경력 등) - : 121건 수집된 데이터에 따르면, '신입'...</div>
+      <div class="post-tags"></div>
+    </article><article class="post-item">
+      <h2><a href="https://suhyunkim-maker.github.io/post.html?file=saramin-crawling-analysis.md">saramin-crawling-analysis</a></h2>
+      <div class="post-meta">2026-05-15 </div>
+      <div class="post-excerpt">오늘 파이썬의 `Requests`와 `BeautifulSoup` 라이브러리를 활용하여 국내 대표 채용 사이트인 에서 실시간 채용 정보를 수집하고 분석하는 프로젝트를 진행했습니다. --- 단순히 웹페이지를 보는 것을 넘어, 파이썬 코드로 데이터를 자동 수집하고 분석하는 전체 과정을 실습했습니다. - : 사람인 (Saramin) - : "데이터 분석가" - :...</div>
+      <div class="post-tags"></div>
+    </article><article class="post-item">
+      <h2><a href="https://suhyunkim-maker.github.io/post.html?file=ohtani-analysis.md">ohtani-analysis</a></h2>
+      <div class="post-meta">2026-05-15 </div>
+      <div class="post-excerpt">안녕하세요! 오늘은 야구 데이터 분석의 꽃이라 불리는 의 2026년 성적을 예측해보는 과정을 단계별로 함께 살펴보겠습니다. --- 세이버매트릭스는 통계학적 방법론을 통해 야구 선수의 성적을 분석하는 기법입니다. 단순히 타율(AVG)이나 홈런 수뿐만 아니라,  등 선수의 실제 가치를 더 정확하게 나타내는 지표들을 사용합니다. -  출루율 + 장타율. 현대 야...</div>
+      <div class="post-tags"></div>
+    </article><article class="post-item">
+      <h2><a href="https://suhyunkim-maker.github.io/post.html?file=odcloud-api-crawling.md">공공데이터포털 API로 다중 페이지 데이터 수집 및 가공하기</a></h2>
+      <div class="post-meta">2026-05-15 | Projects</div>
+      <div class="post-excerpt">이번 포스팅에서는  에서 제공하는 API를 활용하여 여러 페이지에 걸친 데이터를 반복문(`for`문)으로 한 번에 수집하고, 이를 `pandas`를 이용해 원하는 형태의 데이터프레임으로 전처리하는 과정을 공유합니다. `requests` 라이브러리를 사용하여 API에 요청을 보냅니다. `api.odcloud.kr`은 일반적인 공공데이터 API(data.go....</div>
+      <div class="post-tags"><span>#Python</span><span>#Requests</span><span>#Pandas</span><span>#API</span></div>
+    </article><article class="post-item">
+      <h2><a href="https://suhyunkim-maker.github.io/post.html?file=instagram-eda-insights.md">instagram-eda-insights</a></h2>
+      <div class="post-meta">2026-05-15 </div>
+      <div class="post-excerpt">데이터 전처리 과정을 마친 후, 이제 본격적으로 인스타그램 인플루언서 데이터를 탐색하고 시각화하기 위한 준비를 마쳤습니다. 이번 포스팅에서는 정제된 데이터를 바탕으로 상위 인플루언서들의 주요 지표를 살펴보고, 어떤 통찰을 얻을 수 있는지 공유하고자 합니다. 전처리가 완료된 데이터(`insta_influencers_tableau_ready.csv`)는 다음과...</div>
+      <div class="post-tags"></div>
+    </article><article class="post-item">
+      <h2><a href="https://suhyunkim-maker.github.io/post.html?file=data-preprocessing.md">data-preprocessing</a></h2>
+      <div class="post-meta">2026-05-15 </div>
+      <div class="post-excerpt">본 포스팅에서는 인스타그램 인플루언서 데이터 분석 프로젝트의 핵심 단계인 을 상세히 다룹니다. 원본 데이터를 분석 및 시각화(Tableau)에 적합한 형태로 변환하는 과정을 확인해 보세요. --- -  Top Instagram Influencers -  200개 행 -  rank, channel_info, influence_score, followers,</div>
+      <div class="post-tags"></div>
+    </article><article class="post-item">
+      <h2><a href="https://suhyunkim-maker.github.io/post.html?file=bunjang-crawling-playwright.md">bunjang-crawling-playwright</a></h2>
+      <div class="post-meta">2026-05-15 </div>
+      <div class="post-excerpt">최근 AI 에이전트와 를 연동하여 번개장터에서 '물티슈' 상품 데이터를 자동으로 스크래핑(크롤링)해 본 경험을 공유합니다. 기존에 파이썬 스크립트를 작성해서 Selenium이나 BeautifulSoup을 돌리는 과정과 달리, Playwright MCP를 사용하면 AI 어시스턴트(AI 에이전트)가 브라우저를 직접 띄우고: 1. 페이지를 이동하고 2. 동적 로...</div>
+      <div class="post-tags"></div>
+    </article><article class="post-item">
+      <h2><a href="https://suhyunkim-maker.github.io/post.html?file=instagram-analysis.md">인스타그램 인플루언서 데이터 분석</a></h2>
+      <div class="post-meta">2025-05-08 | Projects</div>
+      <div class="post-excerpt">메인 인스타그램 인플루언서에 대한 데이터 분석 프로젝트입니다. - : Pandas - : Google Colab - 데이터 기반 인플루언서 추천 - 구글 코랩을 활용한 데이터 분석 코딩</div>
+      <div class="post-tags"><span>#Pandas</span><span>#Google Colab</span><span>#Data Analysis</span></div>
+    </article><article class="post-item">
+      <h2><a href="https://suhyunkim-maker.github.io/post.html?file=example.md">첫 번째 게시글</a></h2>
+      <div class="post-meta">2025-01-26 | Development</div>
+      <div class="post-excerpt">여기에 마크다운 형식으로 내용을 작성합니다.</div>
+      <div class="post-tags"><span>#JavaScript</span><span>#Web</span></div>
+    </article></section>
+  </main>
+
+  <footer>
+    <p>© 2025 My Blog. Powered by GitHub Pages.</p>
+  </footer>
+
+  <script src="./hello su-hyun kim_files/theme.js.다운로드"></script>
+  <script src="./hello su-hyun kim_files/search.js.다운로드"></script>
+  <script src="./hello su-hyun kim_files/app.js.다운로드"></script>
+
+  <!-- ===== 포트폴리오 AI 챗봇 ===== -->
+  <script>
+    window.ChatWidgetConfig = {
+      webhook: {
+        url: 'https://su0901.app.n8n.cloud/webhook/chat'
+      },
+      branding: {
+        name: 'Portfolio AI',
+        welcomeText: '안녕하세요! 저에 대해 궁금한 점을 물어보세요 😊',
+        responseTimeText: '잠시 후 답변드릴게요'
+      },
+      style: {
+        primaryColor: '#5c6bc0',
+        position: 'right'
+      }
+    };
+  </script>
+  <script src="./hello su-hyun kim_files/chat-widget.js.다운로드"></script><div class="n8n-chat-widget" style="--n8n-chat-primary-color: #5c6bc0; --n8n-chat-background-color: #ffffff; --n8n-chat-font-color: #333333;"><div class="chat-container">
+        <div class="brand-header">
+            <img src="https://suhyunkim-maker.github.io/" alt="Portfolio AI">
+            <span>Portfolio AI</span>
+            <button class="close-button">×</button>
+        </div>
+        <div class="new-conversation">
+            <h2 class="welcome-text">안녕하세요! 저에 대해 궁금한 점을 물어보세요 😊</h2>
+            <button class="new-chat-btn">
+                <svg class="message-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.2L4 17.2V4h16v12z"></path>
+                </svg>
+                Send us a message
+            </button>
+            <p class="response-text">잠시 후 답변드릴게요</p>
+        </div>
+    
+        <div class="chat-interface">
+            <div class="brand-header">
+                <img src="https://suhyunkim-maker.github.io/" alt="Portfolio AI">
+                <span>Portfolio AI</span>
+                <button class="close-button">×</button>
+            </div>
+            <div class="chat-messages"></div>
+            <div class="chat-input">
+                <textarea placeholder="Type your message here..." rows="1"></textarea>
+                <button type="submit">Send</button>
+            </div>
+            <div class="chat-footer">
+                <a href="https://n8n.partnerlinks.io/m8a94i19zhqq?utm_source=nocodecreative.io" target="_blank">Powered by Mad</a>
+            </div>
+        </div>
+    </div><button class="chat-toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M12 2C6.477 2 2 6.477 2 12c0 1.821.487 3.53 1.338 5L2.5 21.5l4.5-.838A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.476 0-2.886-.313-4.156-.878l-3.156.586.586-3.156A7.962 7.962 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"></path>
+        </svg></button></div>
+
+
+
+</body></html>
