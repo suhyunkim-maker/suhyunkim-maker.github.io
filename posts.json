@@ -1,5 +1,20 @@
 [
   {
+    "file": "stock-average-outlier.md",
+    "title": "주가 이동평균선(SMA, WMA, EMA) 분석과 통계적 평균의 함정",
+    "date": "2026-06-05",
+    "tags": [
+      "Python",
+      "Pandas",
+      "yfinance",
+      "Matplotlib",
+      "Data Analysis"
+    ],
+    "category": "Projects",
+    "description": "주식 차트에서 흔히 사용되는 21일 이동평균선(단순, 가중, 지수)을 직접 구하고 비교해 보며, 데이터 분석에서 무심코 사용하는 '산술평균'이 극단적인 이상치(Outlier)에 어떻게 왜곡되는지 수학적/시각적 사례를 통해 알아봅니다.",
+    "excerpt": "주가 데이터를 이용해 21일 기준 이동평균선(SMA, WMA, EMA)을 계산해 시각화해 보고, 이와 대조적으로 일상 통계 분석에서 단순 산술평균이 마주하는 한계(이상치 영향)를 알아봅니다."
+  },
+  {
     "file": "gemini-pdf-keyword-summary.md",
     "title": "Google AI Studio(Gemini API)로 PDF 파일 핵심 키워드 요약 기능 구현하기",
     "date": "2026-05-19",
