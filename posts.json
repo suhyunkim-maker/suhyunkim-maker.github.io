@@ -1,5 +1,23 @@
 [
   {
+    "file": "2026-06-09-seoul-apt-trade.md",
+    "title": "서울시 아파트 실거래가 데이터 분석 및 Random Forest 가격 예측 모델링",
+    "date": "2026-06-09",
+    "tags": [
+      "Python",
+      "Pandas",
+      "Matplotlib",
+      "Seaborn",
+      "Data Analysis",
+      "EDA",
+      "Random Forest",
+      "Machine Learning"
+    ],
+    "category": "Projects",
+    "description": "서울시 부동산 실거래가 공공데이터 약 33.8만 건을 바탕으로 Pandas와 Seaborn을 이용한 EDA(탐색적 데이터 분석), 결측치 처리 및 인코딩 이슈 해결 방안, Random Forest 기반 부동산 가격 예측 모델 구현 과정을 상세히 정리했습니다.",
+    "excerpt": "서울시 부동산 실거래가 공공데이터 약 33.8만 건을 바탕으로 Pandas와 Seaborn을 이용해 자치구별 거래 빈도, 가격 분포, 그리고 이상치 거래 건수를 분석하고 Random Forest 모델을 사용해 아파트 실거래가를 예측하는 과정을 다룹니다."
+  },
+  {
     "file": "stock-average-outlier.md",
     "title": "주가 이동평균선(SMA, WMA, EMA) 분석과 통계적 평균의 함정",
     "date": "2026-06-05",
