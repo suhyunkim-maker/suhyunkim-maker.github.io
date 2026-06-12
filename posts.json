@@ -1,5 +1,23 @@
 [
   {
+    "file": "2026-06-12-apt-price-factors-eda.md",
+    "title": "노원구 아파트 가격 결정 요인 분석: 변수 통제와 통계적 검정(ANOVA & 상관분석)",
+    "date": "2026-06-12",
+    "tags": [
+      "Python",
+      "Pandas",
+      "Matplotlib",
+      "Seaborn",
+      "Data Analysis",
+      "EDA",
+      "ANOVA",
+      "Statistics"
+    ],
+    "category": "Projects",
+    "description": "국민평수(85㎡ 전후) 기준 노원구 아파트 데이터를 바탕으로 변수를 통제하여 가격 결정 요인을 분석했습니다. 단지별 가격 차이를 ANOVA 검정하고 건축년도 및 법정동별 차이를 통계적으로 확인해 봅니다.",
+    "excerpt": "국민평수 기준 노원구 아파트 데이터를 바탕으로 변수를 통제하고 단지별, 건축년도별, 법정동별 아파트 단위가격 차이를 통계적 검정(One-way ANOVA, 피어슨 상관분석)을 통해 분석한 과정을 공유합니다."
+  },
+  {
     "file": "2026-06-09-seoul-apt-trade.md",
     "title": "서울시 아파트 실거래가 데이터 분석 및 Random Forest 가격 예측 모델링",
     "date": "2026-06-09",
