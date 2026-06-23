@@ -1,5 +1,21 @@
 [
   {
+    "file": "2026-06-18-titanic-survival-prediction.md",
+    "title": "타이타닉(Titanic) 생존자 예측 데이터 분석 및 머신러닝 분류 모델링 실습",
+    "date": "2026-06-18",
+    "tags": [
+      "Python",
+      "Pandas",
+      "Seaborn",
+      "Scikit-learn",
+      "Machine Learning",
+      "EDA"
+    ],
+    "category": "Projects",
+    "description": "구글 코랩 환경에서 타이타닉 생존자 데이터셋을 사용하여 탐색적 데이터 분석(EDA), 결측치 정제 등 전처리를 수행하고 Random Forest 모델로 생존 예측을 실습합니다.",
+    "excerpt": "클래식 데이터셋인 타이타닉 생존자 데이터를 다루며 Pandas 분석, Seaborn 시각화, 결측치 처리 및 Scikit-learn의 Random Forest 분류 모델을 통한 예측 정확도 측정을 진행한 과정을 담았습니다."
+  },
+  {
     "file": "2026-06-23-selenium-tutorial.md",
     "title": "파이썬 셀레늄(Selenium) 웹 크롤링 기초: 지마켓 로그인 및 예스24 테이블 데이터 안전하게 추출하기",
     "date": "2026-06-23",
