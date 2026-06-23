@@ -1,5 +1,19 @@
 [
   {
+    "file": "2026-06-23-selenium-tutorial.md",
+    "title": "파이썬 셀레늄(Selenium) 웹 크롤링 기초: 지마켓 로그인 및 예스24 테이블 데이터 안전하게 추출하기",
+    "date": "2026-06-23",
+    "tags": [
+      "Python",
+      "Selenium",
+      "Crawling",
+      "Automation"
+    ],
+    "category": "Projects",
+    "description": "파이썬 셀레늄(Selenium)을 이용해 지마켓 로그인 요소를 탐색하고 예스24 페이지의 상세 테이블 데이터를 안전하게 크롤링하는 실전 예제를 소개합니다.",
+    "excerpt": "셀레늄(Selenium) 기본 설치 및 설정법부터 지마켓 로그인 요소 찾기, 예스24 테이블의 th-td 데이터를 예외 발생 없이 안전하게 추출하는 크롤링 팁을 다룹니다."
+  },
+  {
     "file": "2026-06-12-apt-price-factors-eda.md",
     "title": "노원구 아파트 가격 결정 요인 분석: 변수 통제와 통계적 검정(ANOVA & 상관분석)",
     "date": "2026-06-12",
